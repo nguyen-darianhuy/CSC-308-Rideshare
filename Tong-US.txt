@@ -1,0 +1,5 @@
+As a student rider at Cal Poly, I want to find a ride to my destination, so that I can be there for the holidays.
+
+As a student driver at Cal Poly, I want to find riders that have a destination near my own destination, so that I can make some money.
+
+As a student rider who found a driver, I want to view my driver’s contact information, so I can let them know where to pick me up.
