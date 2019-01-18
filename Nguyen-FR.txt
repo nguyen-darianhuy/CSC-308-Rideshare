@@ -1,0 +1,5 @@
+The system shall display a list of existing rides.
+
+The system shall display a ride’s route in its listing.
+
+The system shall provide a way to sort the list of existing rides by location, depart time, # of seats open, and gas cost.
