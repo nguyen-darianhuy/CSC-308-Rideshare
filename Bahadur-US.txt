@@ -1,0 +1,10 @@
+Yusuf Bahadur
+User Stories
+
+1)As a first-year student, I want to view all passenger seeking carpools travelling to a destination, so I can reach home at my target time.
+
+2)As a student driver, I want to ensure passengers requesting a ride have positive reviews, to help ensure I get paid for driving.
+
+3)As a passenger, I want to be able to view the passengers and drivers before the trip, so I can feel more safe.
+
+

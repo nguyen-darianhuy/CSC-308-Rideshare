@@ -1,0 +1,8 @@
+CSC 348 
+Functional Requirements
+
+The system shall display a drivers music taste in the drivers listing . 
+
+The system shall search for all available vehicles in a database, fitting a user specified destination criteria. 
+
+The system shall deduct the available seats in a specific vehicle, after a passenger is accepted to a vehicle.
