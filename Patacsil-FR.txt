@@ -1,0 +1,5 @@
+The system shall provide the ability for users to rate and comment their experience with the driver/passengers in the car after a trip is completed.
+
+The system shall let users see rating and comments of another user
+
+The system shall let driver share their car informationa and first 3 digits of a license plate

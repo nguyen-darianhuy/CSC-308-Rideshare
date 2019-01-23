@@ -1,0 +1,5 @@
+As a rider, I want the ability to message a driver of any posted trip, so that I am able to askt he driver any details I may need which were not included in the original posting.
+
+As a rider, I want to filter through the search results to only display vehicles that have space, so that I do not waste time scrolling through full cars or message the driver of a full vehicle.
+
+As a rider, I want to have a verification system between me and riders confirming their spot in the car, so that the post may be updated automatically to properly display number of seats available.
