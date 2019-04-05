@@ -9,3 +9,4 @@ addons:
 
 script:
   - ant build # other script steps might be done before running the actual analysis
+  - sonar-scanner -Dsonar.verbose=true -X
