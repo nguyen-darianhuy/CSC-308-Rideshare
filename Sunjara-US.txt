@@ -1,3 +1,0 @@
-1. As a rider I want to know the music preference of the driver, so I can listen to music that I enjoy.
-2. As a rider, I want to be able to access a driver's history, in order to avoid rides from drivers that might make me feel uncomfortable.
-3. As a driver I want to advertise how many seats I have available, in order to avoid having an underflow/overflow of passengers.

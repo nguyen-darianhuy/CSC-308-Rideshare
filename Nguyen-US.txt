@@ -1,5 +1,0 @@
-As a driver, I want to post an entry containing a description of my ride and route so that I can assemble riders.
-
-As a rider, I want to sort existing rides by location, depart time, # of seats open, and gas cost so that I can find the most preferred rides.
-
-As a rider, I want to view a ride’s planned route so that I can see if it is similar to my desired route.
