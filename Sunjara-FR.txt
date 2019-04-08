@@ -1,3 +1,0 @@
-1. The system shall allow users and drivers to leave reviews.
-2. The system shall allow the passengers and drivers to view each other's riding/driving history
-3. The system shall allow the passengers and driver to communicate.

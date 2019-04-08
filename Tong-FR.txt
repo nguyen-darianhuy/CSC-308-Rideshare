@@ -1,6 +1,0 @@
-
-The system shall allow a passenger to request a rider.
-
-The system shall allow a passenger to view the driver’s ride history.
-
-The system shall be able to provide the driver with a suggested route that minimizes the amount of time to complete the drop-offs for the riders.

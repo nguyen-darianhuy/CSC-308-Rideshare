@@ -1,5 +1,0 @@
-The system shall generate a route with the shortest time, stopping at each destination.
-
-The system shall allow drivers to accept or decline passenger requests.
-
-The system shall provide drivers the ability to specify and edit the listing.

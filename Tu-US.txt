@@ -1,5 +1,0 @@
-As a driver, I want to be able to view my passengers' ride history so that I do not have to risk losing money to unhonorable passengers.
-
-As a rider, I want to know a brief description of my driver and what the ride will be like so that I do not have to sit in silence without conversation.
-
-As a rider, I want to know the exact details of the route so I do not end up staying in the car longer than expected.
