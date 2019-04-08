@@ -5,8 +5,8 @@ public abstract class User {
     private String name;
     private int age;
     private String bio;
-    private List<Review> reviews = new ArrayList<Review>;
-    private List<TripListing> tripHistory = new ArrayList<TripListing>;
+    private List<Review> reviews = new ArrayList<Review>();
+    private List<TripListing> tripHistory = new ArrayList<TripListing>();
 
     public User() {
 
