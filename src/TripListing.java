@@ -1,5 +1,6 @@
 public class TripListing {
 
+    String title;
     String driver;
     String destination;
     String departure;
