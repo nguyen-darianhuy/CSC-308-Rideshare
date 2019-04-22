@@ -6,11 +6,11 @@ public class TripListing {
     String departure_date;
     String posting_date;
 
-    Integer total_spots;
-    Integer avaliable_spots;
+    int total_spots;
+    int avaliable_spots;
 
     public TripListing(String driver, String destination,  String departure, String departure_date,  String posting_date,
-                       Integer total_spots, Integer avaliable_spots)
+                       int total_spots, int avaliable_spots)
     {
         this.driver = driver;
         this.destination = destination;
@@ -43,11 +43,11 @@ public class TripListing {
         return posting_date;
     }
 
-    public Integer getTotal_spots(){
+    public int getTotal_spots(){
         return total_spots;
     }
 
-    public Integer getAvaliable_spots(){
+    public int getAvaliable_spots(){
         return avaliable_spots;
     }
 

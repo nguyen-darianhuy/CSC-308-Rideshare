@@ -8,8 +8,9 @@ public abstract class User {
     private List<Review> reviews = new ArrayList<Review>();
     private List<TripListing> tripHistory = new ArrayList<TripListing>();
 
-    public User() {
-
+    public User(String name, int age){
+        this.name = name;
+        this.age = age;
     }
 
     public void setName(String name) {
