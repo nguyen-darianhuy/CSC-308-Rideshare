@@ -8,5 +8,5 @@ addons:
     organization: "nguyen-darianhuy-github" # the key of the org you chose at step #3
 
 script:
-  - ant build # other script steps might be done before running the actual analysis
+  - ./gradlew build --scan -s # other script steps might be done before running the actual analysis
   - sonar-scanner -Dsonar.verbose=true -X
