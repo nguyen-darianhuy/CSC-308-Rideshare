@@ -1,7 +1,7 @@
-language: java
-
-jdk:
-- oraclejdk8
+language: android
+android:
+  components:
+    - android-28
 
 addons:
   sonarcloud:
