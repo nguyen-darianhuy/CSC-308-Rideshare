@@ -2,7 +2,6 @@
 ## Android Studio
 ##########################
 *.iml
-.gradle
 /local.properties
 /.idea/caches
 /.idea/libraries
