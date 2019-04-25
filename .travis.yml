@@ -5,8 +5,8 @@ android:
 
 addons:
   sonarcloud:
-    organization: "nguyen-darianhuy-github" # the key of the org you chose at step #3
+    organization: "nguyen-darianhuy-github"
 
 script:
-  - ./gradlew build --scan -s # other script steps might be done before running the actual analysis
+  - ./gradlew build connectedCheck 
   - sonar-scanner -Dsonar.verbose=true -X
