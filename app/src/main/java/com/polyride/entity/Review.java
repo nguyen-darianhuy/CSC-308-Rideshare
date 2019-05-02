@@ -1,3 +1,4 @@
+package com.polyride.entity;
 public class Review {
 
     private User reviewer;

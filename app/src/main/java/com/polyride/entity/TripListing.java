@@ -1,31 +1,27 @@
-import java.util.Date;
-
+package com.polyride.entity;
 public class TripListing {
 
-    int RideID;
-    int DriverID;
-    int MaxPassengers;
-    int NumPassengers;
-    String Destination;
-    String Departure;
-    Date PostDate;
-    Date DepartureDate;
-
+    String title;
+    String driver;
+    String destination;
+    String departure;
+    String departure_date;
+    String posting_date;
 
     int total_spots;
     int avaliable_spots;
 
-    public TripListing(int RideID, int DriverID, int MaxPassengers, int NumPassengers,
-        String Destination, String Departure, Date PostDate, Date DepartureDate)
+    public TripListing(String driver, String destination,  String departure, String departure_date,  String posting_date,
+                       int total_spots, int avaliable_spots)
     {
-        this.RideID = RideID;
-        this.DriverID = DriverID;
-        this.MaxPassengers = MaxPassengers;
-        this.NumPassengers = NumPassengers;
-        this.Destination = Destination;
-        this.Departure = Departure;
-        this.PostDate = PostDate;
-        this.DepartureDate = DepartureDate;
+        this.driver = driver;
+        this.destination = destination;
+        this.departure = departure;
+        this.departure_date = departure_date;
+        this.posting_date = posting_date;
+
+        this.total_spots = total_spots;
+        this.avaliable_spots = avaliable_spots;
     }
 
 

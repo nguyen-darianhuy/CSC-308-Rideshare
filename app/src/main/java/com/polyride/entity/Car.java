@@ -1,3 +1,4 @@
+package com.polyride.entity;
 
 class Car {
 	String make;

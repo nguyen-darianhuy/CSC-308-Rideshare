@@ -1,10 +1,13 @@
+package com.polyride.entity;
+
+import java.util.List;
 public class Driver extends User{
 
     private Car carInfo;
     private List<TripListing> plannedTrips;
 
     public Driver(String name, int age, Car car){
-        super(name, age);
+        //super(name, age);
         carInfo = car;
     }
 

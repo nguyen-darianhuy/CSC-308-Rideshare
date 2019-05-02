@@ -1,7 +1,9 @@
+package com.polyride.entity;
+
 import java.util.*;
 
 public abstract class User {
-
+/*
     private String name;
     private int age;
     private String bio;
@@ -56,6 +58,5 @@ public abstract class User {
         for (int i = 0; i < tripHistory.size(); i++) {
             // Implement title field in TripListing to differentiate different rides
             System.out.println(tripHistory.get(i).title);
-        }
-    }
+        }*/
 }
