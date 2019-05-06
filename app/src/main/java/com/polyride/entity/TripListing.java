@@ -1,24 +1,31 @@
 package com.polyride.entity;
 import android.support.annotation.*;
 import java.util.Date;
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 @Entity (foreignKeys = @ForeignKey(entity = Users.class,
-        parentColumns = 'userId',
-        childColumns = 'driverId'))
+        parentColumns = "userId",
+        childColumns = "driverId"))
 
 public class TripListing {
     @NonNull
     @PrimaryKey
-    public int rideId;
+    public Integer rideId;
 
     @NonNull
     @ColumnInfo(name = "driverId")
-    public int driverId;
+    public Integer driverId;
 
+    @NonNull
     @ColumnInfo(name = "maxPassengers")
-    public int maxPassengers;
+    public Integer maxPassengers;
 
     @ColumnInfo(name = "numPassengers")
-    public int numPassengers;
+    public Integer numPassengers;
 
     @NonNull
     @ColumnInfo(name = "destination")
@@ -32,39 +39,48 @@ public class TripListing {
     @ColumnInfo(name = "departureDate")
     public String departureDate;
 
+    @NonNull
     @ColumnInfo(name = "postDate")
     public Date postDate;
 
-
-    public TripListing()
-    {
+    public TripListing(Integer rideId, Integer driverId, Integer maxPassengers,
+                       Integer numPassengers, String destination, String departure,
+                       String departureDate, Date postDate) {
+        this.rideId = rideId;
+        this.driverId = driverId;
+        this.maxPassengers = maxPassengers;
+        this.numPassengers = numPassengers;
+        this.destination = destination;
+        this.departure = departure;
+        this.departureDate = departureDate;
+        this.postDate = postDate;
     }
 
-    public int getRideId() {
+    public Integer getRideId() {
         return rideId;
     }
-    public void setRideId(int rideId) {
+    public void setRideId(Integer rideId) {
         this.rideId = rideId;
     }
 
-    public int getDriverId() {
+    public Integer getDriverId() {
         return driverId;
     }
-    public void setDriverId(int driverId) {
+    public void setDriverId(Integer driverId) {
         this.driverId = driverId;
     }
 
-    public int getMaxPassengers() {
+    public Integer getMaxPassengers() {
         return maxPassengers;
     }
-    public void setMaxPassengers(int maxPassengers) {
+    public void setMaxPassengers(Integer maxPassengers) {
         this.maxPassengers = maxPassengers;
     }
 
-    public int getNumPassengers() {
+    public Integer getNumPassengers() {
         return numPassengers;
     }
-    public void setNumPassengers(int numPassengers) {
+    public void setNumPassengers(Integer numPassengers) {
         this.numPassengers = numPassengers;
     }
 

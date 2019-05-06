@@ -16,21 +16,21 @@ public class Review {
     @NonNull
     @PrimaryKey
     @ColumnInfo(name = "reviewId")
-    private int reviewId;
+    private Integer reviewId;
 
     @ColumnInfo(name = "reviewerId")
-    private int reviewerId;
+    private Integer reviewerId;
 
     @ColumnInfo(name = "revieweeId")
-    private int revieweeId;
+    private Integer revieweeId;
 
     @ColumnInfo(name = "comment")
     private String comment;
 
     @ColumnInfo(name = "rating")
-    private int rating;
+    private Integer rating;
 
-    public Review(int reviewId, int reviewerId, int revieweeId, String content, int rating){
+    public Review(Integer reviewId, Integer reviewerId, Integer revieweeId, String content, Integer rating){
         this.reviewId = reviewId;
         this.reviewerId = reviewerId;
         this.revieweeId = revieweeId;
@@ -39,24 +39,24 @@ public class Review {
     }
 
 
-    public int getReviewId() {
+    public Integer getReviewId() {
         return reviewId;
     }
-    public void setReviewId(int reviewId) {
+    public void setReviewId(Integer reviewId) {
         this.reviewId = reviewId;
     }
 
-    public int getReviewerId() {
+    public Integer getReviewerId() {
         return reviewerId;
     }
-    public void setReviewerId(int reviewerId) {
+    public void setReviewerId(Integer reviewerId) {
         this.reviewerId = reviewerId;
     }
 
-    public int getRevieweeId() {
+    public Integer getRevieweeId() {
         return revieweeId;
     }
-    public void setRevieweeId(int revieweeId) {
+    public void setRevieweeId(Integer revieweeId) {
         this.revieweeId = revieweeId;
     }
 
@@ -67,10 +67,10 @@ public class Review {
         this.comment = comment;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 }

@@ -16,16 +16,20 @@ public class Driver {
 
     @NonNull
     @ColumnInfo(name = "userId")
-    public int userId;
+    public Integer userId;
     @ColumnInfo(name = "cardId")
-    public int carId;
+    public Integer carId;
 
 
     public List<Integer> plannedTrips;
 
-    public Driver() {
 
+    public Driver(Integer userId, Integer carId, List<Integer> plannedTrips) {
+        this.userId = userId;
+        this.carId = carId;
+        this.plannedTrips = plannedTrips;
     }
+
     public void addListing(Integer t){
         plannedTrips.add(t);
     }

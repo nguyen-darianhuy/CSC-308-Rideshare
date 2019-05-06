@@ -1,26 +1,30 @@
 package com.polyride.entity;
-import android.support.annotation.*;
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 @Entity
 public class Login {
     @NonNull
     @PrimaryKey
-    @ColumnInfo(name = 'profId')
-    public int profile;
+    @ColumnInfo(name = "profId")
+    public Integer profile;
 
     @NonNull
-    @ColumnInfo(name = 'username')
+    @ColumnInfo(name = "username")
     public String username;
 
     @NonNull
-    @ColumnInfo(name = 'password')
+    @ColumnInfo(name = "password")
     public String password;
 
     @NonNull
-    @ColumnInfo(name = 'email')
+    @ColumnInfo(name = "email")
     public String email;
 
-    @Ignore
-    public Login(String un, String pw, String em, int profId){
+    public Login(String un, String pw, String em, Integer profId){
         this.username = un;
         this.password = pw;
         this.email = em;
@@ -35,6 +39,6 @@ public class Login {
 
     public int getProfileID() { return this.profile; }
 
-    public void connect(String username, String password){ return; }
+    public void connect(String username, String password){}
 
 }

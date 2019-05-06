@@ -15,10 +15,10 @@ public class Users {
     @NonNull
     @PrimaryKey
     @ColumnInfo(name = "userId")
-    public int userId;
+    public Integer userId;
 
     @ColumnInfo(name = "profId")
-    public int profId;
+    public Integer profId;
 
     @ColumnInfo(name = "firstname")
     public String firstName;
@@ -35,7 +35,8 @@ public class Users {
     private List<Integer> reviews;
     private List<Integer> tripHistory;
 
-    public Users(int userId, String userName, String firstName, String lastName, int age, String bio) {
+    public Users(Integer userId, String userName, String firstName,
+                 String lastName, Integer age, String bio) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -45,8 +46,8 @@ public class Users {
         tripHistory = new ArrayList<Integer>();
     }
 
-    public void setUserID(int userID) { this.userId = userID; }
-    public int getUserID() { return this.userId; }
+    public void setUserID(Integer userID) { this.userId = userID; }
+    public Integer getUserID() { return this.userId; }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -62,18 +63,18 @@ public class Users {
         return this.lastName;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
-    public int getAge() {
+    public Integer getAge() {
         return this.age;
     }
 
     public void setBio(String bio) { this.bio = bio; }
     public String getBio() { return this.bio; }
 
-    public void addReview(int reviewId) { reviews.add(reviewId); }
-    public void addTripHistory(int tripId) { tripHistory.add(tripId); }
+    public void addReview(Integer reviewId) { reviews.add(reviewId); }
+    public void addTripHistory(Integer tripId) { tripHistory.add(tripId); }
 
     public void printReviews() {
         System.out.println("Reviews:");
