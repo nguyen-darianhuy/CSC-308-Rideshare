@@ -1,55 +1,52 @@
 package com.polyride.entity;
-import android.support.annotation.*;
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 import java.util.*;
 
 @Entity(foreignKeys = @ForeignKey(entity = Login.class,
-        parentColumns = 'profId',
-        childColumns = 'profId'))
+        parentColumns = "profId",
+        childColumns = "profId"))
 
 public class Users {
     @NonNull
     @PrimaryKey
-    @ColumnInfo(name = 'userId')
+    @ColumnInfo(name = "userId")
     public int userId;
 
-    @NonNull
-    @ColumnInfo(name = 'profId')
+    @ColumnInfo(name = "profId")
     public int profId;
 
-    @NonNull
-    @ColumnInfo(name = 'firstname')
+    @ColumnInfo(name = "firstname")
     public String firstName;
 
-    @NonNull
-    @ColumnInfo(name = 'lastname')
+    @ColumnInfo(name = "lastname")
     public String lastName;
 
-    @ColumnInfo(name = 'age')
+    @ColumnInfo(name = "age")
     public int age;
 
-    @ColumnInfo(name = 'bio')
+    @ColumnInfo(name = "bio")
     public String bio;
 
-    @Ignore
-    private List<Integer> reviews = new ArrayList<Integer>;
-    @Ignore
-    private List<Integer> tripHistory = new ArrayList<Integer>;
+    private List<Integer> reviews;
+    private List<Integer> tripHistory;
 
-
-    @Ignore
     public Users(int userId, String userName, String firstName, String lastName, int age, String bio) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.bio = bio;
+        reviews = new ArrayList<Integer>();
+        tripHistory = new ArrayList<Integer>();
     }
 
     public void setUserID(int userID) { this.userId = userID; }
     public int getUserID() { return this.userId; }
-
-    public void setUserName(String userName) { this.userName = userName; }
-    public String getUserName() { return userName; }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;

@@ -1,31 +1,35 @@
 package com.polyride.entity;
-import android.support.annotation.*;
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 
 @Entity(foreignKeys = {@ForeignKey(entity = Users.class,
-                            parentColumns = 'userId',
-                            childColumns = 'reviewerId'),
+                            parentColumns = "userId",
+                            childColumns = "reviewerId"),
                        @ForeignKey(entity = Users.class,
-                            parentColumns = 'userId',
-                            childColumns = 'revieweeId')})
+                            parentColumns = "userId",
+                            childColumns = "revieweeId")})
 public class Review {
     @NonNull
     @PrimaryKey
-    @ColumnInfo(name = 'reviewId')
+    @ColumnInfo(name = "reviewId")
     private int reviewId;
 
-    @ColumnInfo(name = 'reviewerId')
+    @ColumnInfo(name = "reviewerId")
     private int reviewerId;
 
-    @ColumnInfo(name = 'revieweeId')
+    @ColumnInfo(name = "revieweeId")
     private int revieweeId;
 
-    @ColumnInfo(name = 'comment')
+    @ColumnInfo(name = "comment")
     private String comment;
 
-    @ColumnInfo(name = 'rating')
+    @ColumnInfo(name = "rating")
     private int rating;
 
-    @Ignore
     public Review(int reviewId, int reviewerId, int revieweeId, String content, int rating){
         this.reviewId = reviewId;
         this.reviewerId = reviewerId;
