@@ -1,10 +1,10 @@
 package com.polyride.entity;
-public class Passenger extends User{
+public class Passenger{
 
     private boolean trustedRider;
 
     public Passenger(String name, int age){
-        //super(name, age);
+        super(name, age);
     }
 
     // TODO
