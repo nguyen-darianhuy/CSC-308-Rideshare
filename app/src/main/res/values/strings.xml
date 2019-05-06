@@ -17,5 +17,7 @@
     <string name="Terms">By signing up, you agree to the Terms of Service</string>
     <string name="Account">Already Have an Account?</string>
     <string name="Create2">Profile</string>
+    <string name="title_activity_notifications">Notifications</string>
+    <string name="title_activity_notif">Notif</string>
 
 </resources>
