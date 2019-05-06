@@ -7,7 +7,7 @@ public class Driver extends User{
     private List<TripListing> plannedTrips;
 
     public Driver(String name, int age, Car car){
-        //super(name, age);
+        super(name, age);
         carInfo = car;
     }
 
