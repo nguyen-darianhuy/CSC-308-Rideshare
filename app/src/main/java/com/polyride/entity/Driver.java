@@ -1,29 +1,31 @@
 package com.polyride.entity;
+import java.util.*;
 
-import java.util.List;
-public class Driver extends User{
+@Entity(foreignKeys = {@ForeignKey(entity = Users.class,
+                parentColumns = 'userId',
+                childColumns = 'userId')
+        @ForeignKey(entity = Car.class,
+                parentColumns = 'carId',
+                childColumns = 'carId')})
+public class Driver {
 
-    private Car carInfo;
-    private List<TripListing> plannedTrips;
+    @NonNull
+    @ColumnInfo(name = 'userId')
+    public int userId;
+    @ColumnInfo(name = 'cardId')
+    public int carId;
 
-    public Driver(String name, int age, Car car){
-        //super(name, age);
-        carInfo = car;
+
+    public List<Integer> plannedTrips;
+
+    @Ignore
+    public Driver() {
+
     }
-
-    public void addListing(TripListing t){
+    public void addListing(Integer t){
         plannedTrips.add(t);
     }
-
-    // TODO
-    public void editListing(TripListing t){
-        return;
-    }
-
-    //TODO
-    public void deleteListing(TripListing t){
-        return;
-    }
-
+    public void editListing(TripListing t){ }
+    public void deleteListing(TripListing t){ }
     public Car getCarInfo(){return carInfo;}
 }

@@ -1,31 +1,40 @@
 package com.polyride.entity;
-public class Login{
-    private String username;
-    private String password;
-    private User profile;
+import android.support.annotation.*;
+@Entity
+public class Login {
+    @NonNull
+    @PrimaryKey
+    @ColumnInfo(name = 'profId')
+    public int profile;
 
-    public Login(String un, String pw, User prof){
+    @NonNull
+    @ColumnInfo(name = 'username')
+    public String username;
+
+    @NonNull
+    @ColumnInfo(name = 'password')
+    public String password;
+
+    @NonNull
+    @ColumnInfo(name = 'email')
+    public String email;
+
+    @Ignore
+    public Login(String un, String pw, String em, int profId){
         this.username = un;
         this.password = pw;
-        this.profile = prof;
+        this.email = em;
+        this.profile = profId;
     }
 
-    // TODO
-    public void requestUsername(){
-        return;
-    }
+    public String requestUsername(){ return this.username; }
 
-    //TODO
-    public void requestPassword(){
-        return;
-    }
+    public String requestPassword(){ return this.password; }
 
-    //ToDO
-    public void connect(String username, String password){
-        return;
-    }
+    public String getEmail() { return this.email; }
 
+    public int getProfileID() { return this.profile; }
 
-
+    public void connect(String username, String password){ return; }
 
 }

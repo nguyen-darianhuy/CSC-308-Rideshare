@@ -1,57 +1,94 @@
 package com.polyride.entity;
+import android.support.annotation.*;
+import java.util.Date;
+@Entity (foreignKeys = @ForeignKey(entity = Users.class,
+        parentColumns = 'userId',
+        childColumns = 'driverId'))
+
 public class TripListing {
+    @NonNull
+    @PrimaryKey
+    public int rideId;
 
-    String title;
-    String driver;
-    String destination;
-    String departure;
-    String departure_date;
-    String posting_date;
+    @NonNull
+    @ColumnInfo(name = "driverId")
+    public int driverId;
 
-    int total_spots;
-    int avaliable_spots;
+    @ColumnInfo(name = "maxPassengers")
+    public int maxPassengers;
 
-    public TripListing(String driver, String destination,  String departure, String departure_date,  String posting_date,
-                       int total_spots, int avaliable_spots)
+    @ColumnInfo(name = "numPassengers")
+    public int numPassengers;
+
+    @NonNull
+    @ColumnInfo(name = "destination")
+    public String destination;
+
+    @NonNull
+    @ColumnInfo(name = "departure")
+    public String departure;
+
+    @NonNull
+    @ColumnInfo(name = "departureDate")
+    public String departureDate;
+
+    @ColumnInfo(name = "postDate")
+    public Date postDate;
+
+
+    public TripListing()
     {
-        this.driver = driver;
-        this.destination = destination;
-        this.departure = departure;
-        this.departure_date = departure_date;
-        this.posting_date = posting_date;
-
-        this.total_spots = total_spots;
-        this.avaliable_spots = avaliable_spots;
     }
 
-
-    public String getDriver(){
-        return driver;
+    public int getRideId() {
+        return rideId;
+    }
+    public void setRideId(int rideId) {
+        this.rideId = rideId;
     }
 
-    public String getDestination(){
+    public int getDriverId() {
+        return driverId;
+    }
+    public void setDriverId(int driverId) {
+        this.driverId = driverId;
+    }
+
+    public int getMaxPassengers() {
+        return maxPassengers;
+    }
+    public void setMaxPassengers(int maxPassengers) {
+        this.maxPassengers = maxPassengers;
+    }
+
+    public int getNumPassengers() {
+        return numPassengers;
+    }
+    public void setNumPassengers(int numPassengers) {
+        this.numPassengers = numPassengers;
+    }
+
+    public String getDestination() {
         return destination;
     }
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
 
-    public String getDeparture(){
+    public String getDeparture() {
         return departure;
     }
-
-    public String getDeparture_date(){
-        return departure_date;
+    public void setDeparture(String departure) {
+        this.departure = departure;
     }
 
-    public String getPosting_date(){
-        return posting_date;
+    public String getDepartureDate() {
+        return departureDate;
     }
+    public void setDepartureDate(String departureDate) { this.departureDate = departureDate; }
 
-    public int getTotal_spots(){
-        return total_spots;
+    public Date getPostDate() { return postDate; }
+    public void setPostDate(Date postDate) {
+        this.postDate = postDate;
     }
-
-    public int getAvaliable_spots(){
-        return avaliable_spots;
-    }
-
-
 }
