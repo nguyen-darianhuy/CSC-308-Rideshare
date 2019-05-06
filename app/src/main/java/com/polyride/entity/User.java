@@ -3,15 +3,16 @@ package com.polyride.entity;
 import java.util.*;
 
 public abstract class User {
-/*
+
     private String name;
     private int age;
     private String bio;
-    private List<Review> reviews = new ArrayList<Review>;
-    private List<TripListing> tripHistory = new ArrayList<TripListing>;
+    private List<Review> reviews = new ArrayList<Review>();
+    private List<TripListing> tripHistory = new ArrayList<TripListing>();
 
-    public User() {
-
+    public User(String na, int num) {
+        this.name = na;
+        age = num;
     }
 
     public void setName(String name) {
@@ -47,16 +48,17 @@ public abstract class User {
     }
 
     public void printReviews() {
-        System.out.println("Reviews:")
+        System.out.println("Reviews:");
         for (int i = 0; i < reviews.size(); i++) {
             System.out.println(reviews.get(i));
         }
     }
 
     public void printHistory() {
-        System.out.println("History:")
+        System.out.println("History:");
         for (int i = 0; i < tripHistory.size(); i++) {
             // Implement title field in TripListing to differentiate different rides
             System.out.println(tripHistory.get(i).title);
-        }*/
+        }
+    }
 }
