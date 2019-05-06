@@ -16,4 +16,6 @@
     <string name="Sign_Up">Sign Up</string>
     <string name="Terms">By signing up, you agree to the Terms of Service</string>
     <string name="Account">Already Have an Account?</string>
+    <string name="Create2">Profile</string>
+
 </resources>
