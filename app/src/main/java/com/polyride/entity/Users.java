@@ -2,12 +2,15 @@ package com.polyride.entity;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 import java.util.*;
 
-@Entity(tableName = "UsersTable",
+@Entity(indices = {@Index("profId")},
+        tableName = "UsersTable",
         foreignKeys = @ForeignKey(entity = Login.class,
         parentColumns = "profId",
         childColumns = "profId"))
@@ -33,7 +36,9 @@ public class Users {
     @ColumnInfo(name = "bio")
     public String bio;
 
+    @Ignore
     private List<Integer> reviews;
+    @Ignore
     private List<Integer> tripHistory;
 
     public Users(Integer userId, String firstName,
@@ -49,6 +54,14 @@ public class Users {
 
     public void setUserID(Integer userID) { this.userId = userID; }
     public Integer getUserID() { return this.userId; }
+
+    public Integer getProfId() {
+        return profId;
+    }
+
+    public void setProfId(Integer profId) {
+        this.profId = profId;
+    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;

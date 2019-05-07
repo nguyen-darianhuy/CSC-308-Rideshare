@@ -3,9 +3,13 @@ import java.util.*;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.Index;
 import android.support.annotation.NonNull;
 
-@Entity(foreignKeys = {@ForeignKey(entity = Users.class,
+@Entity(indices = {@Index("userId"), @Index("carId")},
+        primaryKeys = {"userId", "carId"},
+        foreignKeys = {@ForeignKey(entity = Users.class,
                 parentColumns = "userId",
                 childColumns = "userId"),
         @ForeignKey(entity = Car.class,
@@ -16,10 +20,10 @@ public class Driver {
     @NonNull
     @ColumnInfo(name = "userId")
     public Integer userId;
-    @ColumnInfo(name = "cardId")
+    @ColumnInfo(name = "carId")
     public Integer carId;
 
-
+    @Ignore
     public List<Integer> plannedTrips;
 
 

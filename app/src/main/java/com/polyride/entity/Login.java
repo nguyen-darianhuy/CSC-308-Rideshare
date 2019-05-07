@@ -9,7 +9,7 @@ public class Login {
     @NonNull
     @PrimaryKey
     @ColumnInfo(name = "profId")
-    public Integer profile;
+    public Integer profId;
 
     @NonNull
     @ColumnInfo(name = "username")
@@ -23,11 +23,11 @@ public class Login {
     @ColumnInfo(name = "email")
     public String email;
 
-    public Login(String un, String pw, String em, Integer profId){
-        this.username = un;
-        this.password = pw;
-        this.email = em;
-        this.profile = profId;
+    public Login(String username, String password, String email, Integer profId){
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.profId = profId;
     }
 
     public String requestUsername(){ return this.username; }
@@ -36,7 +36,7 @@ public class Login {
 
     public String getEmail() { return this.email; }
 
-    public int getProfileID() { return this.profile; }
+    public int getProfileID() { return this.profId; }
 
     public void connect(String username, String password){ //TODO
     }

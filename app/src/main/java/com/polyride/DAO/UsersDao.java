@@ -12,7 +12,7 @@ public interface UsersDao {
     @Query("SELECT * FROM UsersTable")
     List<Users> getAllUsers();
 
-    @Query("SELECT userId, firstname, lastname FROM UsersTable WHERE userId = :userId")
+    @Query("SELECT * FROM UsersTable WHERE userId = :userId")
     List<Users> getLoginById(Integer userId);
 
     @Insert

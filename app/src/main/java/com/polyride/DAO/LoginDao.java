@@ -12,7 +12,7 @@ public interface LoginDao {
     @Query("SELECT * FROM LoginTable")
     List<Login> getAllLogins();
 
-    @Query("SELECT username, password FROM LoginTable WHERE profId = :userId")
+    @Query("SELECT * FROM LoginTable WHERE profId = :userId")
     List<Login> getLoginById(Integer profId);
 
     @Insert

@@ -1,4 +1,5 @@
 package com.polyride.entity;
+import android.arch.persistence.room.Index;
 import android.support.annotation.*;
 import java.util.Date;
 import android.arch.persistence.room.ColumnInfo;
@@ -7,7 +8,8 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity (foreignKeys = @ForeignKey(entity = Users.class,
+@Entity (indices = {@Index("driverId")},
+        foreignKeys = @ForeignKey(entity = Users.class,
         parentColumns = "userId",
         childColumns = "driverId"))
 
@@ -42,6 +44,7 @@ public class TripListing {
     @NonNull
     @ColumnInfo(name = "postDate")
     public Date postDate;
+
 
     public TripListing(Integer rideId, Integer driverId, Integer maxPassengers,
                        String destination, String departure,
