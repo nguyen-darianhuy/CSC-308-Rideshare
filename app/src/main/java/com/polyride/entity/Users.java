@@ -7,7 +7,8 @@ import android.support.annotation.NonNull;
 
 import java.util.*;
 
-@Entity(foreignKeys = @ForeignKey(entity = Login.class,
+@Entity(tableName = "UsersTable",
+        foreignKeys = @ForeignKey(entity = Login.class,
         parentColumns = "profId",
         childColumns = "profId"))
 

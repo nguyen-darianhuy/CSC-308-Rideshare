@@ -1,18 +1,19 @@
-package com.polyride.controller;
+package com.polyride.DAO;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.*;
 
 import com.polyride.entity.Driver;
+import java.util.List;
 
 @Dao
 public interface DriverDao {
 
     @Query("SELECT * FROM Driver")
-    LiveData<Driver> loadAllDrivers();
+    List<Driver> loadAllDrivers();
 
     @Query("SELECT * FROM Driver LIMIT 5")
-    LiveData<Driver> loadFirstFiveDrivers();
+    List<Driver> loadFirstFiveDrivers();
 
     @Insert
     void insertDriver(Driver driver);
