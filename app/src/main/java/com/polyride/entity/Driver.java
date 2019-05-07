@@ -20,6 +20,7 @@ public class Driver {
     @NonNull
     @ColumnInfo(name = "userId")
     public Integer userId;
+    @NonNull
     @ColumnInfo(name = "carId")
     public Integer carId;
 
@@ -27,10 +28,10 @@ public class Driver {
     public List<Integer> plannedTrips;
 
 
-    public Driver(Integer userId, Integer carId, List<Integer> plannedTrips) {
+    public Driver(Integer userId, Integer carId ) {
         this.userId = userId;
         this.carId = carId;
-        this.plannedTrips = plannedTrips;
+        this.plannedTrips = new ArrayList<>();
     }
 
     public void addListing(Integer t){
