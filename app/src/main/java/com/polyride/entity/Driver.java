@@ -3,7 +3,6 @@ import java.util.*;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 @Entity(foreignKeys = {@ForeignKey(entity = Users.class,
@@ -33,6 +32,8 @@ public class Driver {
     public void addListing(Integer t){
         plannedTrips.add(t);
     }
-    public void editListing(TripListing t){ }
-    public void deleteListing(TripListing t){ }
+    public void editListing(TripListing t){ //TODO
+    }
+    public void deleteListing(TripListing t){ //TODO
+    }
 }

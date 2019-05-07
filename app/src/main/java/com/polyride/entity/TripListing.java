@@ -44,7 +44,7 @@ public class TripListing {
     public Date postDate;
 
     public TripListing(Integer rideId, Integer driverId, Integer maxPassengers,
-                       Integer numPassengers, String destination, String departure,
+                       String destination, String departure,
                        String departureDate, Date postDate) {
         this.rideId = rideId;
         this.driverId = driverId;

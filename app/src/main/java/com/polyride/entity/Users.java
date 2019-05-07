@@ -36,15 +36,15 @@ public class Users {
     private List<Integer> reviews;
     private List<Integer> tripHistory;
 
-    public Users(Integer userId, String userName, String firstName,
+    public Users(Integer userId, String firstName,
                  String lastName, Integer age, String bio) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.bio = bio;
-        reviews = new ArrayList<Integer>();
-        tripHistory = new ArrayList<Integer>();
+        reviews = new ArrayList<>();
+        tripHistory = new ArrayList<>();
     }
 
     public void setUserID(Integer userID) { this.userId = userID; }

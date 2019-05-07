@@ -1,7 +1,6 @@
 package com.polyride.entity;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
@@ -39,6 +38,7 @@ public class Login {
 
     public int getProfileID() { return this.profile; }
 
-    public void connect(String username, String password){}
+    public void connect(String username, String password){ //TODO
+    }
 
 }
