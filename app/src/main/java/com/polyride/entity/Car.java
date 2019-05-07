@@ -5,8 +5,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity
-class Car {
+@Entity(tableName = "CarTable")
+public class Car {
 	@NonNull
 	@PrimaryKey
 	@ColumnInfo(name = "carId")

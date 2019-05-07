@@ -9,7 +9,7 @@ import android.content.Context;
 import com.polyride.DAO.*;
 import com.polyride.entity.*;
 
-@Database(entities = {Login.class, Users.class, TripListing.class, Driver.class}, version = 1, exportSchema = false)
+@Database(entities = {Login.class, Users.class, TripListing.class, Driver.class, Car.class}, version = 1, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
     public abstract LoginDao loginDao();
