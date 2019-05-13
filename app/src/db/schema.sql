@@ -1,48 +1,56 @@
 CREATE TABLE Login (
-	Username VARCHAR(50) NOT NULL,
-	Password VARCHAR(50) NOT NULL,
-	Email VARCHAR(50) NOT NULL,
-	PRIMARY KEY (Username)
+    profId INTEGER NOT NULL,
+	username VARCHAR(50) NOT NULL,
+	password VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	PRIMARY KEY (profileId),
+	UNIQUE (username)
 );
 
-CREATE TABLE User (
-	UserID INTEGER NOT NULL AUTO_INCREMENT,
-	FirstName VARCHAR(50) NOT NULL,
-	LastName VARCHAR(50) NOT NULL,
-	Username VARCHAR(50) NOT NULL,
-	Bio VARCHAR(500),
-	Age INTEGER,
+CREATE TABLE Users (
+	userId INTEGER NOT NULL AUTO_INCREMENT,
+	profId INTEGER NOT NULL,
+	firstname VARCHAR(50) NOT NULL,
+	fastname VARCHAR(50) NOT NULL,
+	bio VARCHAR(1000),
+	age INTEGER,
 	PRIMARY KEY (UserID),
-	FOREIGN KEY (Username) REFERENCES Login(Username)
+	FOREIGN KEY (profId) REFERENCES Login(profId)
 );
 
 CREATE TABLE TripListing (
-	RideID INTEGER NOT NULL AUTO_INCREMENT,
-	DriverID INTEGER NOT NULL,
-	MaxPassengers INTEGER NOT NULL,
-	NumPassengers INTEGER NOT NULL,
-	Destination VARCHAR(255) NOT NULL,
-	Departure VARCHAR(255) NOT NULL,
-	PostDate DATE NOT NULL,
-	DepartureDate DATE NOT NULL,
-	PRIMARY KEY (RideID),
-	FOREIGN KEY (DriverID) REFERENCES User(UserID)
+	rideId INTEGER NOT NULL AUTO_INCREMENT,
+	driverId INTEGER NOT NULL,
+	maxPassengers INTEGER NOT NULL,
+	numPassengers INTEGER NOT NULL,
+	destination VARCHAR(255) NOT NULL,
+	departure VARCHAR(255) NOT NULL,
+	postDate DATE NOT NULL,
+	departureDate DATE NOT NULL,
+	PRIMARY KEY (rideID),
+	FOREIGN KEY (driverID) REFERENCES Users(userId)
 );
 
-CREATE TABLE RidePassengers {
-    RideID INTEGER NOT NULL,
-    PassengerID NOT NULL,
+CREATE TABLE RidePassengers (
+    rideId INTEGER NOT NULL,
+    passengerId NOT NULL,
     FOREIGN KEY (RideID) REFERENCES TripListing(RideID),
-    FOREIGN KEY (PassengerID) REFERENCES User(UserID)
-};
+    FOREIGN KEY (PassengerID) REFERENCES Users(UserId)
+);
 
-CREATE TABLE Rating (
-	RatingID INTEGER NOT NULL AUTO_INCREMENT,
-	ReviewedID INTEGER NOT NULL,
-	ReviewerID INTEGER NOT NULL,
-	Rating INTEGER NOT NULL CHECK (Rating between 1 and 5),
-	Comment VARCHAR(500) NOT NULL,
+CREATE TABLE Review (
+	ratingID INTEGER NOT NULL AUTO_INCREMENT,
+	reviewedID INTEGER NOT NULL,
+	reviewerID INTEGER NOT NULL,
+	rating INTEGER NOT NULL CHECK (Rating between 1 and 5),
+	Comment VARCHAR(1000) NOT NULL,
 	PRIMARY KEY (RatingID),
-	FOREIGN KEY (ReviewedID) REFERENCES User(UserID)
-	FOREIGN KEY (ReviewerID) REFERENCES User(UserID)
+	FOREIGN KEY (ReviewedID) REFERENCES Users(UserId)
+	FOREIGN KEY (ReviewerID) REFERENCES Users(UserId)
+);
+
+CREATE TABLE Driver (
+    userId INTEGER NOT NULL,
+    carId INTEGER,
+    FOREIGN KEY (userId) REFERENCES Users(UserId)
 );
