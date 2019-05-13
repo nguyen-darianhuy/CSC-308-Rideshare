@@ -1,29 +1,44 @@
 package com.polyride.entity;
+import java.util.*;
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.Index;
+import android.support.annotation.NonNull;
 
-import java.util.List;
-public class Driver extends User{
+@Entity(indices = {@Index("userId"), @Index("carId")},
+        primaryKeys = {"userId", "carId"},
+        foreignKeys = {@ForeignKey(entity = Users.class,
+                parentColumns = "userId",
+                childColumns = "userId"),
+        @ForeignKey(entity = Car.class,
+                parentColumns = "carId",
+                childColumns = "carId")})
+public class Driver {
 
-    private Car carInfo;
-    private List<TripListing> plannedTrips;
+    @NonNull
+    @ColumnInfo(name = "userId")
+    public Integer userId;
+    @NonNull
+    @ColumnInfo(name = "carId")
+    public Integer carId;
 
-    public Driver(String name, int age, Car car){
-        super(name, age);
-        carInfo = car;
+    @Ignore
+    public List<Integer> plannedTrips;
+
+
+    public Driver(Integer userId, Integer carId ) {
+        this.userId = userId;
+        this.carId = carId;
+        this.plannedTrips = new ArrayList<>();
     }
 
-    public void addListing(TripListing t){
+    public void addListing(Integer t){
         plannedTrips.add(t);
     }
-
-    // TODO
-    public void editListing(TripListing t){
-        return;
+    public void editListing(TripListing t){ //TODO
     }
-
-    //TODO
-    public void deleteListing(TripListing t){
-        return;
+    public void deleteListing(TripListing t){ //TODO
     }
-
-    public Car getCarInfo(){return carInfo;}
 }
