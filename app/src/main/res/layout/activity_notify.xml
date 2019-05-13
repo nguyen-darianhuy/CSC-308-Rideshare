@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.Notify">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:itemHorizontalTranslationEnabled="false"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Notifications"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="400dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/background_light"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+    <ImageView
+        android:id="@+id/imageRater5"
+        android:layout_width="52dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="8dp"
+        android:background="@mipmap/ic_person"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button10"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageRater"
+        android:layout_width="52dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="34dp"
+        android:background="@mipmap/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageRater2" />
+
+    <ImageView
+        android:id="@+id/imageRater2"
+        android:layout_width="52dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="34dp"
+        android:background="@mipmap/ic_star"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageRater4" />
+
+    <ImageView
+        android:id="@+id/imageRater1"
+        android:layout_width="52dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="34dp"
+        android:background="@mipmap/ic_caryu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageRater5" />
+
+    <ImageView
+        android:id="@+id/imageRater4"
+        android:layout_width="52dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="34dp"
+        android:background="@mipmap/ic_caryu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageRater1" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="180dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="8dp"
+        android:background="#1D839AA2"
+        android:text="Mark All As Read"
+        android:textColor="#129792"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="310dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="24dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="310dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+    <View
+        android:id="@+id/divider9"
+        android:layout_width="310dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button12" />
+
+    <View
+        android:id="@+id/divider10"
+        android:layout_width="310dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
+
+    <View
+        android:id="@+id/divider8"
+        android:layout_width="310dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button11" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="400dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/background_light"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="400dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/background_light"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button12" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="400dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/background_light"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button11" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="400dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/background_light"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="255dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="You Accepted John Doe to Your Ride! 2/4 Spots Remaining"
+        app:layout_constraintStart_toEndOf="@+id/imageRater1"
+        app:layout_constraintTop_toTopOf="@+id/button9" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="255dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Remember to Rate Your Passengers!"
+        app:layout_constraintStart_toEndOf="@+id/imageRater2"
+        app:layout_constraintTop_toTopOf="@+id/button11" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="255dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text='Red Messaged You. "I will be at starbucks.."'
+        app:layout_constraintStart_toEndOf="@+id/imageRater"
+        app:layout_constraintTop_toTopOf="@+id/button13" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="255dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="You Accepted Elen Bon to Your Ride! 3/4 Spots Remaining"
+        app:layout_constraintStart_toEndOf="@+id/imageRater4"
+        app:layout_constraintTop_toTopOf="@+id/button12" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="255dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Jared Lee Requests a Ride Request to Santa Barbara"
+        app:layout_constraintStart_toEndOf="@+id/imageRater5"
+        app:layout_constraintTop_toTopOf="@+id/button10" />
+
+</android.support.constraint.ConstraintLayout>
+
