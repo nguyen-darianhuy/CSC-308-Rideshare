@@ -19,6 +19,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase DBINSTANCE;
 
+    /*
     public static AppDatabase getDatabase(final Context context) {
         if (DBINSTANCE == null) {
             synchronized(AppDatabase.class) {
@@ -31,5 +32,5 @@ public abstract class AppDatabase extends RoomDatabase {
             }
         }
         return DBINSTANCE;
-    }
+    }*/
 }
