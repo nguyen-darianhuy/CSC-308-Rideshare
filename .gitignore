@@ -30,3 +30,6 @@ tmp/
 *~.nib
 local.properties
 .loadpath
+
+# API Key
+google-services.json
