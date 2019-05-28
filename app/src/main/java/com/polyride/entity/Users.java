@@ -9,37 +9,17 @@ import android.support.annotation.NonNull;
 
 import java.util.*;
 
-@Entity(indices = {@Index("profId")},
-        tableName = "UsersTable",
-        foreignKeys = @ForeignKey(entity = Login.class,
-        parentColumns = "profId",
-        childColumns = "profId"))
-
 public class Users {
-    @NonNull
-    @PrimaryKey
-    @ColumnInfo(name = "userId")
+
     public Integer userId;
-
-    @ColumnInfo(name = "profId")
     public Integer profId;
-
-    @ColumnInfo(name = "firstname")
     public String firstName;
-
-    @ColumnInfo(name = "lastname")
     public String lastName;
-
-    @ColumnInfo(name = "age")
     public int age;
-
-    @ColumnInfo(name = "bio")
     public String bio;
+    public List<Integer> reviews;
 
-    @Ignore
-    private List<Integer> reviews;
-    @Ignore
-    private List<Integer> tripHistory;
+    public Users() {}
 
     public Users(Integer userId, String firstName,
                  String lastName, Integer age, String bio) {
@@ -48,12 +28,16 @@ public class Users {
         this.lastName = lastName;
         this.age = age;
         this.bio = bio;
-        reviews = new ArrayList<>();
-        tripHistory = new ArrayList<>();
+        this.reviews = new ArrayList<>();
     }
 
-    public void setUserID(Integer userID) { this.userId = userID; }
-    public Integer getUserID() { return this.userId; }
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
     public Integer getProfId() {
         return profId;
@@ -63,45 +47,44 @@ public class Users {
         this.profId = profId;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    public String getFirstName() {
-        return this.firstName;
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public String getLastName() {
-        return this.lastName;
+
+    public int getAge() {
+        return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
-    public Integer getAge() {
-        return this.age;
+
+    public String getBio() {
+        return bio;
     }
 
-    public void setBio(String bio) { this.bio = bio; }
-    public String getBio() { return this.bio; }
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
 
     public void addReview(Integer reviewId) { reviews.add(reviewId); }
-    public void addTripHistory(Integer tripId) { tripHistory.add(tripId); }
 
     public void printReviews() {
         System.out.println("Reviews:");
         for (int i = 0; i < reviews.size(); i++) {
             System.out.println(reviews.get(i));
-        }
-    }
-
-    public void printHistory() {
-        System.out.println("History:");
-        for (int i = 0; i < tripHistory.size(); i++) {
-            // Implement title field in TripListing to differentiate different rides
-            System.out.println(tripHistory.get(i));
         }
     }
 }

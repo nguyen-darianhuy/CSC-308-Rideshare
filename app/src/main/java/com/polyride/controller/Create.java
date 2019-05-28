@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import com.polyride.R;
 
-public class RegisterActivity extends AppCompatActivity{
+public class Create extends AppCompatActivity{
     private static final String TAG = "EmailPassword";
 
     private TextView mTextMessage;
@@ -38,31 +38,10 @@ public class RegisterActivity extends AppCompatActivity{
 
     private FirebaseAuth mAuth;
 
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-            }
-            return false;
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_create);
 
         Log.d("CLICK", "Register Activity Page");
 
@@ -86,9 +65,6 @@ public class RegisterActivity extends AppCompatActivity{
             }
         });
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         mAuth = FirebaseAuth.getInstance();
     }

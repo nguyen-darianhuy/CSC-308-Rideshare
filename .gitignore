@@ -33,3 +33,6 @@ local.properties
 
 # API Key
 google-services.json
+
+# logs
+*.log
