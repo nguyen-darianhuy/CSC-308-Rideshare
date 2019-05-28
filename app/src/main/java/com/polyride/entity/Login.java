@@ -1,27 +1,13 @@
 package com.polyride.entity;
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
 
-@Entity(tableName = "LoginTable")
 public class Login {
-    @NonNull
-    @PrimaryKey
-    @ColumnInfo(name = "profId")
+
     public Integer profId;
-
-    @NonNull
-    @ColumnInfo(name = "username")
     public String username;
-
-    @NonNull
-    @ColumnInfo(name = "password")
     public String password;
-
-    @NonNull
-    @ColumnInfo(name = "email")
     public String email;
+
+    public Login() {}
 
     public Login(String username, String password, String email, Integer profId){
         this.username = username;
@@ -30,15 +16,35 @@ public class Login {
         this.profId = profId;
     }
 
-    public String requestUsername(){ return this.username; }
-
-    public String requestPassword(){ return this.password; }
-
-    public String getEmail() { return this.email; }
-
-    public int getProfileID() { return this.profId; }
-
-    public void connect(String username, String password){ //TODO
+    public Integer getProfId() {
+        return profId;
     }
 
+    public void setProfId(Integer profId) {
+        this.profId = profId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

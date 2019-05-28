@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "743726631517",
+    "firebase_url": "https://polyride309.firebaseio.com",
+    "project_id": "polyride309",
+    "storage_bucket": "polyride309.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743726631517:android:35e5dfe9ac9f236c",
+        "android_client_info": {
+          "package_name": "com.polyride"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743726631517-sfb6iq36t4ghtmukn5h1ali3k2qen2im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZK9sng-9P8oldBGllPUpkXZoO1KJABCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743726631517-sfb6iq36t4ghtmukn5h1ali3k2qen2im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
