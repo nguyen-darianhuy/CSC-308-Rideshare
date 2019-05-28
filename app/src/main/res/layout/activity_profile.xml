@@ -11,20 +11,19 @@
         android:id="@+id/nav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="624dp"
         android:background="?android:attr/windowBackground"
         app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/view3"
         app:menu="@menu/bottom_nav_menu" />
 
     <View
         android:id="@+id/view3"
-        android:layout_width="409dp"
-        android:layout_height="214dp"
+        android:layout_width="411dp"
+        android:layout_height="185dp"
         android:layout_marginBottom="8dp"
         android:background="#EEEEEE"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,21 +45,6 @@
         app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="389dp"
-        android:layout_height="457dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="56dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3"></LinearLayout>
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="107dp"
@@ -79,7 +63,7 @@
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view3"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
         android:id="@+id/editText"
@@ -92,20 +76,6 @@
         android:text="yusuf.baha@gmail.com"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <EditText
-        android:id="@+id/Default"
-        android:layout_width="348dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Colorado Springs, CO"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editText7"
@@ -123,14 +93,11 @@
         android:id="@+id/editText4"
         android:layout_width="341dp"
         android:layout_height="41dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="I am a Pro Soccer Player for Chelsea"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -231,7 +198,7 @@
         android:layout_width="46dp"
         android:layout_height="27dp"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="320dp"
         android:text="Name"
         android:textColor="#129792"
