@@ -1,34 +1,14 @@
 package com.polyride.entity;
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
 
-
-@Entity(foreignKeys = {@ForeignKey(entity = Users.class,
-                            parentColumns = "userId",
-                            childColumns = "reviewerId"),
-                       @ForeignKey(entity = Users.class,
-                            parentColumns = "userId",
-                            childColumns = "revieweeId")})
 public class Review {
-    @NonNull
-    @PrimaryKey
-    @ColumnInfo(name = "reviewId")
-    private Integer reviewId;
 
-    @ColumnInfo(name = "reviewerId")
-    private Integer reviewerId;
+    public Integer reviewId;
+    public Integer reviewerId;
+    public Integer revieweeId;
+    public String comment;
+    public Integer rating;
 
-    @ColumnInfo(name = "revieweeId")
-    private Integer revieweeId;
-
-    @ColumnInfo(name = "comment")
-    private String comment;
-
-    @ColumnInfo(name = "rating")
-    private Integer rating;
+    public Review() {}
 
     public Review(Integer reviewId, Integer reviewerId, Integer revieweeId, String content, Integer rating){
         this.reviewId = reviewId;
@@ -38,10 +18,10 @@ public class Review {
         this.rating = rating;
     }
 
-
     public Integer getReviewId() {
         return reviewId;
     }
+
     public void setReviewId(Integer reviewId) {
         this.reviewId = reviewId;
     }
@@ -49,6 +29,7 @@ public class Review {
     public Integer getReviewerId() {
         return reviewerId;
     }
+
     public void setReviewerId(Integer reviewerId) {
         this.reviewerId = reviewerId;
     }
@@ -56,6 +37,7 @@ public class Review {
     public Integer getRevieweeId() {
         return revieweeId;
     }
+
     public void setRevieweeId(Integer revieweeId) {
         this.revieweeId = revieweeId;
     }
@@ -63,6 +45,7 @@ public class Review {
     public String getComment() {
         return comment;
     }
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -70,6 +53,7 @@ public class Review {
     public Integer getRating() {
         return rating;
     }
+
     public void setRating(Integer rating) {
         this.rating = rating;
     }
