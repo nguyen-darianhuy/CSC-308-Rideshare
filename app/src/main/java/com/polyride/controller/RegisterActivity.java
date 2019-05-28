@@ -1,5 +1,6 @@
 package com.polyride.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TextInputLayout;
@@ -117,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity{
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(getApplicationContext(), "Account Made.",
                                     Toast.LENGTH_SHORT).show();
-                            //updateUI(user);
+                            openMainActivity();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -132,5 +133,10 @@ public class RegisterActivity extends AppCompatActivity{
                     }
                 });
         // [END create_user_with_email]
+    }
+
+    void openMainActivity(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
