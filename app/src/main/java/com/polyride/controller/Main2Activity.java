@@ -2,67 +2,71 @@ package com.polyride.controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
+import com.polyride.ExampleAdapter;
+import com.polyride.ExampleItem;
 import com.polyride.R;
-import android.widget.ListView;
 
-import android.widget.BaseAdapter;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import java.util.ArrayList;
 
 public class Main2Activity extends AppCompatActivity {
 
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
-    ListView listView;
-    int[] IMAGES = {R.mipmap.ic_raters, R.mipmap.ic_raters};
+    private ExampleAdapter adapter;
 
-    String[] NAMES = {"Sarah Hyland", "Sarah Hyland"};
-
-    String[] DESCRIPTIONS = {"San Luis Obispo -> San Jose", "San Luis Obispo -> San Jose"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        listView=findViewById(R.id.listView);
+        ArrayList<ExampleItem> exampleList = new ArrayList<>();
+        exampleList.add(new ExampleItem(R.mipmap.ic_raters, "Sarah Hyland", "2/3 Spots Remaining", "San Luis Obispo -> San Jose"));
+        exampleList.add(new ExampleItem(R.mipmap.ic_raters, "Sam Jennings", "1/2 Spots Remaining", "San Luis Obispo -> LAX"));
+        exampleList.add(new ExampleItem(R.mipmap.ic_raters, "Travis Greene", "3/4 Spots Remaining", "San Francisco -> San Luis Obispo"));
 
-        CustomAdapter customAdapter = new CustomAdapter();
+        //this line is different than the video, with the recycler view
+        mRecyclerView = findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        adapter = new ExampleAdapter(exampleList);
 
-        listView.setAdapter(customAdapter);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(adapter);
     }
 
-    class CustomAdapter extends BaseAdapter {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.bottom_nav_menu, menu);
 
-        @Override
-        public int getCount(){
-            return IMAGES.length;
-        }
+            MenuItem searchItem = menu.findItem(R.id.action_search);
+            SearchView searchView = (SearchView) searchItem.getActionView();
 
-        @Override
-        public Object getItem(int i){
-            return null;
-        }
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    return false;
+                }
 
-        @Override
-        public long getItemId(int i){
-            return 0;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup){
-            view = getLayoutInflater().inflate(R.layout.customlayout,null);
-
-            ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
-            TextView textView_name = (TextView)view.findViewById(R.id.textView_name);
-            TextView textView_description = (TextView)view.findViewById(R.id.textView_description);
-
-            imageView.setImageResource(IMAGES[i]);
-            textView_name.setText(NAMES[i]);
-            textView_description.setText(DESCRIPTIONS[i]);
-
-            return view;
-        }
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    adapter.getFilter().filter(newText);
+                    return false;
+                }
+            });
+            return true;
     }
+
+
+
+
 }
