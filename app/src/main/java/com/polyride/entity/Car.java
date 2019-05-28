@@ -1,36 +1,14 @@
 package com.polyride.entity;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
-
-@Entity(tableName = "CarTable")
 public class Car {
-	@NonNull
-	@PrimaryKey
-	@ColumnInfo(name = "carId")
-	Integer carId;
+	public Integer carId;
+	public String make;
+	public String model;
+	public Integer year;
+	public String color;
+	public Integer licensePlate;
 
-	@NonNull
-	@ColumnInfo(name = "make")
-	String make;
-
-	@NonNull
-	@ColumnInfo(name = "model")
-	String model;
-
-	@NonNull
-	@ColumnInfo(name = "modelYear")
-	Integer year;
-
-	@NonNull
-	@ColumnInfo(name = "color")
-	String color;
-
-	@NonNull
-	@ColumnInfo(name = "licensePlate")
-	Integer licensePlate;
+	public Car() {}
 	
 	public Car(Integer carId, String make, String model,
 			   Integer year, String color, Integer licensePlate) {
@@ -42,7 +20,6 @@ public class Car {
 		this.licensePlate = licensePlate;
 	}
 
-
 	public Integer getCarId() {
 		return carId;
 	}
@@ -50,7 +27,6 @@ public class Car {
 	public void setCarId(Integer carId) {
 		this.carId = carId;
 	}
-
 
 	public String getMake() {
 		return make;
