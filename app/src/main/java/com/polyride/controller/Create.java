@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
 import com.polyride.R;
@@ -43,8 +44,6 @@ public class Create extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
-        Log.d("CLICK", "Register Activity Page");
-
         // text fields
         firstName = findViewById(R.id.textInputLayout);
         lastName = findViewById(R.id.textInputLayout2);
@@ -61,53 +60,37 @@ public class Create extends AppCompatActivity{
                 String inputEmail = email.getEditText().getText().toString().trim();
                 String inputPass = password.getEditText().getText().toString().trim();
                 createAccount(inputEmail, inputPass);
-
             }
         });
-
-
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void onStart(){
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        // updateUI(user)
-    }
-
     void createAccount(String email, String pass){
-        Log.d(TAG, "createAccount:" + email);
-        /*if (!validateForm()) {
+        if(email == null || password == null){
+            Toast.makeText(getApplicationContext(), "Email or Password cannot be left empty",
+                    Toast.LENGTH_SHORT).show();
             return;
-        }*/
-
-        //showProgressDialog();
-
+        }
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, pass)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(getApplicationContext(), "Account Made.",
-                                    Toast.LENGTH_SHORT).show();
-                            openMainActivity();
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "createUserWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                Toast.makeText(getApplicationContext(), "Account Created.",
+                                        Toast.LENGTH_SHORT).show();
+                                openMainActivity();
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }
-
-                        // [START_EXCLUDE]
-                        //hideProgressDialog();
-                        // [END_EXCLUDE]
-                    }
-                });
+                    });
         // [END create_user_with_email]
     }
 
