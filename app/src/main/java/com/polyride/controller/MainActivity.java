@@ -30,10 +30,23 @@ public class MainActivity extends AppCompatActivity {
                 openActivity2();
             }
         });
+
+        button = (Button)findViewById(R.id.button4);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openLogin();
+            }
+        });
     }
 
     public void openActivity2(){
         Intent intent = new Intent(this, Create.class);
+        startActivity(intent);
+    }
+
+    public void openLogin(){
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
 }

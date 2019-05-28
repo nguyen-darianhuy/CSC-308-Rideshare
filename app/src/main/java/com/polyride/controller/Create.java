@@ -84,11 +84,11 @@ public class Create extends AppCompatActivity{
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void onStart(){
+    /*public void onStart(){
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
         // updateUI(user)
-    }
+    }*/
 
     void createAccount(String email, String pass){
         Log.d(TAG, "createAccount:" + email);
@@ -109,7 +109,7 @@ public class Create extends AppCompatActivity{
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(getApplicationContext(), "Account Made.",
                                     Toast.LENGTH_SHORT).show();
-                            openMainActivity();
+                            openMain2Activity();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -126,8 +126,8 @@ public class Create extends AppCompatActivity{
         // [END create_user_with_email]
     }
 
-    void openMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+    void openMain2Activity(){
+        Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
 }
