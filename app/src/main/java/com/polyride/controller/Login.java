@@ -22,8 +22,6 @@ public class Login extends AppCompatActivity { //NOSONAR
     private static final String TAG = "LOGINPASSWORD";
 
     private Button signInButton;
-    private TextInputLayout userLogin;
-    private TextInputLayout userPassword;
 
     private String login;
     private String password;
@@ -37,8 +35,8 @@ public class Login extends AppCompatActivity { //NOSONAR
         setContentView(R.layout.activity_login);
 
         // get the field
-        userLogin = findViewById(R.id.textInputLayout3);
-        userPassword = findViewById(R.id.textInputLayout4);
+        TextInputLayout userLogin = findViewById(R.id.textInputLayout3);
+        TextInputLayout userPassword = findViewById(R.id.textInputLayout4);
         login = userLogin.getEditText().getText().toString().trim();
         password = userPassword.getEditText().getText().toString().trim();
         signInButton = findViewById(R.id.button5);
