@@ -16,33 +16,25 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.polyride.R;
+import com.polyride.entity.Session;
 
 public class Login extends AppCompatActivity { //NOSONAR
 
     private static final String TAG = "LOGINPASSWORD";
 
     private Button signInButton;
-
-    private String login;
-    private String password;
-
+    private String userLogin;
+    private String userPassword;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // replace with correct xml file name
         setContentView(R.layout.activity_login);
-
-        // get the field
-        TextInputLayout userLogin = findViewById(R.id.textInputLayout3);
-        TextInputLayout userPassword = findViewById(R.id.textInputLayout4);
-        login = userLogin.getEditText().getText().toString().trim();
-        password = userPassword.getEditText().getText().toString().trim();
-        signInButton = findViewById(R.id.button5);
 
         mAuth = FirebaseAuth.getInstance();
 
+        signInButton = findViewById(R.id.button5);
         signInButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 loginActivity();
@@ -50,6 +42,7 @@ public class Login extends AppCompatActivity { //NOSONAR
         });
     }
 
+    @Override
     public void onStart(){
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -57,7 +50,13 @@ public class Login extends AppCompatActivity { //NOSONAR
     }
 
     void loginActivity(){
-        mAuth.signInWithEmailAndPassword(login, password)
+        // get the field
+        userLogin = findViewById(R.id.textInputLayout3).toString().trim();
+        userPassword = findViewById(R.id.textInputLayout4).toString().trim();
+        System.out.println(userLogin);
+        System.out.println(userPassword);
+        /*signInButton = findViewById(R.id.button5);
+        mAuth.signInWithEmailAndPassword(userLogin, userPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -67,7 +66,9 @@ public class Login extends AppCompatActivity { //NOSONAR
                             Toast.makeText(Login.this, "Login Success!",
                                     Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Session.setCurrentUserId(user.getUid());
                             nextActivity();
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -75,7 +76,7 @@ public class Login extends AppCompatActivity { //NOSONAR
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
-                });
+                });*/
     }
 
     void nextActivity(){
