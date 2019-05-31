@@ -21,6 +21,8 @@ public class Login extends AppCompatActivity { //NOSONAR
 
     private static final String TAG = "LOGINPASSWORD";
 
+    private TextInputLayout userLogin;
+    private TextInputLayout userPassword;
     private Button signInButton;
 
     private String login;
@@ -35,10 +37,9 @@ public class Login extends AppCompatActivity { //NOSONAR
         setContentView(R.layout.activity_login);
 
         // get the field
-        TextInputLayout userLogin = findViewById(R.id.textInputLayout3);
-        TextInputLayout userPassword = findViewById(R.id.textInputLayout4);
-        login = userLogin.getEditText().getText().toString().trim();
-        password = userPassword.getEditText().getText().toString().trim();
+        userLogin = findViewById(R.id.textInputLayout3);
+        userPassword = findViewById(R.id.textInputLayout4);
+
         signInButton = findViewById(R.id.button5);
 
         mAuth = FirebaseAuth.getInstance();
@@ -57,6 +58,14 @@ public class Login extends AppCompatActivity { //NOSONAR
     }
 
     void loginActivity(){
+        login = userLogin.getEditText().getText().toString().trim();
+        password = userPassword.getEditText().getText().toString().trim();
+
+        if(login == null || password == null){
+            Log.d(TAG, "Login: " + login);
+            Log.d(TAG, "Pass: "+ password);
+            return;
+        }
         mAuth.signInWithEmailAndPassword(login, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
