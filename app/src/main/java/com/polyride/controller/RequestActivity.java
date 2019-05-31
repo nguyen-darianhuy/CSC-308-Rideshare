@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.polyride.R;
 
-public class RequestActivity extends AppCompatActivity {
+public class RequestActivity extends AppCompatActivity {  //NOSONAR
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

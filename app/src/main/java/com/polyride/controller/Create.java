@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import com.polyride.R;
 
-public class Create extends AppCompatActivity{
+public class Create extends AppCompatActivity{  //NOSONAR
     private static final String TAG = "EmailPassword";
 
     private TextView mTextMessage;
@@ -46,6 +46,20 @@ public class Create extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
+
+        button = (Button)findViewById(R.id.button5);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openActivity3();
+            }
+        });
+    }
+
+    public void openActivity3(){
+        Intent intent = new Intent (this, Main2Activity.class);
+
+        Log.d("CLICK", "Register Activity Page");
 
         // text fields
         firstName = findViewById(R.id.textInputLayout);

@@ -23,10 +23,10 @@
     <View
         android:id="@+id/view3"
         android:layout_width="411dp"
-        android:layout_height="185dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="365dp"
         android:background="#EEEEEE"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +70,6 @@
         android:layout_width="349dp"
         android:layout_height="42dp"
         android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="yusuf.baha@gmail.com"
@@ -82,7 +81,6 @@
         android:layout_width="348dp"
         android:layout_height="40dp"
         android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Driver"
@@ -106,7 +104,6 @@
         android:layout_width="344dp"
         android:layout_height="40dp"
         android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="2 Seater: Gold Masserati"
@@ -129,7 +126,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="8dp"
         android:text="Vehicle Type"
         android:textColor="#129792"
@@ -162,7 +158,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="8dp"
         android:text="Driver / Passenger"
         android:textColor="#129792"
@@ -174,7 +169,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="8dp"
         android:text="Email"
         android:textColor="#129792"
@@ -206,5 +200,15 @@
         app:layout_constraintHorizontal_bias="0.325"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="133dp"
+        android:onClick="save"
+        android:text="SAVE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="161dp" />
 
 </android.support.constraint.ConstraintLayout>

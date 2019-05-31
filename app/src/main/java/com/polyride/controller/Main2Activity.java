@@ -15,7 +15,7 @@ import com.polyride.R;
 
 import java.util.ArrayList;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {  //NOSONAR
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
