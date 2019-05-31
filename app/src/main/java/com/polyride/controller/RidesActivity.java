@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import com.polyride.R;
 
-public class RidesActivity extends AppCompatActivity {
+public class RidesActivity extends AppCompatActivity {  //NOSONAR
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

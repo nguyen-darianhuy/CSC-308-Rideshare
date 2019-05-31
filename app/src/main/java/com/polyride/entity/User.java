@@ -7,16 +7,16 @@ public class User {
     private String email;
     private String vehicle;
     private String bio;
-    private List<Integer> reviews;
+    private String homeCity;
 
     public User() {}
 
-    public User(String name, String email, String vehicle, String bio, List<Integer> reviews) {
+    public User(String name, String email, String vehicle, String bio, String homeCity) {
         this.name = name;
         this.email = email;
         this.vehicle = vehicle;
         this.bio = bio;
-        this.reviews = reviews;
+        this.homeCity = homeCity;
     }
 
     public String getName() {
@@ -35,7 +35,5 @@ public class User {
         return vehicle;
     }
 
-    public List<Integer> getReviews() {
-        return reviews;
-    }
+    public String getHomeCity() { return homeCity; }
 }

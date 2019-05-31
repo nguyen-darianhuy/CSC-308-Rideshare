@@ -14,17 +14,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.polyride.R;
-import com.polyride.entity.Session;
 
 public class Login extends AppCompatActivity { //NOSONAR
 
     private static final String TAG = "LOGINPASSWORD";
 
     private Button signInButton;
-    private String userLogin;
-    private String userPassword;
+    private TextInputLayout loginWrapper;
+    private TextInputLayout passwordWrapper;
     private FirebaseAuth mAuth;
 
     @Override
@@ -33,7 +31,8 @@ public class Login extends AppCompatActivity { //NOSONAR
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-
+        loginWrapper = findViewById(R.id.textInputLayout3);
+        passwordWrapper = findViewById(R.id.textInputLayout4);
         signInButton = findViewById(R.id.button5);
         signInButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -42,21 +41,11 @@ public class Login extends AppCompatActivity { //NOSONAR
         });
     }
 
-    @Override
-    public void onStart(){
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-    }
-
     void loginActivity(){
         // get the field
-        userLogin = findViewById(R.id.textInputLayout3).toString().trim();
-        userPassword = findViewById(R.id.textInputLayout4).toString().trim();
-        System.out.println(userLogin);
-        System.out.println(userPassword);
-        /*signInButton = findViewById(R.id.button5);
-        mAuth.signInWithEmailAndPassword(userLogin, userPassword)
+        String login = loginWrapper.getEditText().getText().toString().trim();
+        String password = passwordWrapper.getEditText().getText().toString().trim();
+        mAuth.signInWithEmailAndPassword(login, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -65,8 +54,6 @@ public class Login extends AppCompatActivity { //NOSONAR
                             Log.d(TAG, "signInWithEmail:success");
                             Toast.makeText(Login.this, "Login Success!",
                                     Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Session.setCurrentUserId(user.getUid());
                             nextActivity();
 
                         } else {
@@ -76,11 +63,11 @@ public class Login extends AppCompatActivity { //NOSONAR
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
-                });*/
+                });
     }
 
     void nextActivity(){
-        Intent intent = new Intent(this, RidesActivity.class);
+        Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
     }
 }

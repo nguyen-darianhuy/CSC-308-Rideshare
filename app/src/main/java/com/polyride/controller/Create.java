@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import com.polyride.R;
 
-public class Create extends AppCompatActivity{
+public class Create extends AppCompatActivity{  //NOSONAR
     private static final String TAG = "EmailPassword";
 
     private TextView mTextMessage;

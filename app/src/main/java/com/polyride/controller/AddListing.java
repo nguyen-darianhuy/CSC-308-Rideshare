@@ -18,7 +18,7 @@ import java.util.Calendar;
 
 import io.opencensus.tags.Tag;
 
-public class AddListing extends AppCompatActivity {
+public class AddListing extends AppCompatActivity { //NOSONAR
 
     private static final String TAG = "AddListing";
 

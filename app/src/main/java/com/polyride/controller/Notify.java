@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.polyride.R;
 
-public class Notify extends AppCompatActivity {
+public class Notify extends AppCompatActivity {  //NOSONAR
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
