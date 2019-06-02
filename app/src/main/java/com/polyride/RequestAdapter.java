@@ -1,6 +1,5 @@
 package com.polyride;
 
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> implements Filterable {
+public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.ExampleViewHolder> implements Filterable {
 
     private ArrayList<ExampleItem> mExampleList;
     private List<ExampleItem> exampleListFull;
@@ -22,7 +21,6 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     public TextView mTextView1;
     public TextView mTextView2;
     public TextView mTextView3;
-    public DividerItemDecoration mDivider;
 
     public static class ExampleViewHolder extends RecyclerView.ViewHolder{
 
@@ -30,20 +28,17 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         public TextView mTextView1;
         public TextView mTextView2;
         public TextView mTextView3;
-        //public DividerItemDecoration mDivider;
 
         public ExampleViewHolder(View itemView) {
             super(itemView);
-            mImageView = itemView.findViewById(R.id.imageView);
+            mImageView = itemView.findViewById(R.id.imageRater2);
             mTextView1 = itemView.findViewById(R.id.textView);
-            mTextView2 = itemView.findViewById(R.id.textView2);
-            mTextView3 = itemView.findViewById(R.id.textView3);
-            //mDivider = itemView.findViewById(R.id.divider8);
-
+            mTextView2 = itemView.findViewById(R.id.textView9);
+            mTextView3 = itemView.findViewById(R.id.textView34);
         }
     }
 
-    public ExampleAdapter(ArrayList<ExampleItem> exampleList){
+    public RequestAdapter(ArrayList<ExampleItem> exampleList){
 
         mExampleList = exampleList;
         exampleListFull = new ArrayList<>(exampleList);
@@ -51,7 +46,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
     @Override
     public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_items, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.request_items, parent, false);
         ExampleViewHolder evh = new ExampleViewHolder(v);
         return evh;
     }
@@ -64,7 +59,6 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         holder.mTextView1.setText(currentItem.getText1());
         holder.mTextView2.setText(currentItem.getText2());
         holder.mTextView3.setText(currentItem.getText3());
-        //holder.mDivider.setText(currentItem.getDivider1());
 
     }
 
