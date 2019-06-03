@@ -10,8 +10,6 @@ import com.polyride.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Button button;

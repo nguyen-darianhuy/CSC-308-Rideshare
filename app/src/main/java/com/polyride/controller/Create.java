@@ -12,7 +12,6 @@ import android.support.design.widget.TextInputLayout;
 import android.support.annotation.NonNull;
 
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,7 +41,7 @@ public class Create extends AppCompatActivity{  //NOSONAR
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
-        Button button = (Button)findViewById(R.id.button5);
+        Button button = findViewById(R.id.button5);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
