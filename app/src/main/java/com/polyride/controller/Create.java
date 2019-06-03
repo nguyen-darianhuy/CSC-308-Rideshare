@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import com.polyride.R;
 
-public class Create extends AppCompatActivity{
+public class Create extends AppCompatActivity{  //NOSONAR
     private static final String TAG = "EmailPassword";
 
     private TextView mTextMessage;
@@ -76,28 +76,17 @@ public class Create extends AppCompatActivity{
                 String inputEmail = email.getEditText().getText().toString().trim();
                 String inputPass = password.getEditText().getText().toString().trim();
                 createAccount(inputEmail, inputPass);
-
             }
         });
-
-
         mAuth = FirebaseAuth.getInstance();
     }
 
-    /*public void onStart(){
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        // updateUI(user)
-    }*/
-
     void createAccount(String email, String pass){
-        Log.d(TAG, "createAccount:" + email);
-        /*if (!validateForm()) {
+        if(email == null || password == null){
+            Toast.makeText(getApplicationContext(), "Email or Password cannot be left empty",
+                    Toast.LENGTH_SHORT).show();
             return;
-        }*/
-
-        //showProgressDialog();
-
+        }
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -117,13 +106,9 @@ public class Create extends AppCompatActivity{
                                     Toast.LENGTH_SHORT).show();
                             //updateUI(null);
                         }
-
-                        // [START_EXCLUDE]
-                        //hideProgressDialog();
-                        // [END_EXCLUDE]
                     }
-                });
         // [END create_user_with_email]
+        });
     }
 
     void openMain2Activity(){

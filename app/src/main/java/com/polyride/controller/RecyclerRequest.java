@@ -19,7 +19,8 @@ import com.polyride.R;
 
 import java.util.ArrayList;
 
-public class RecyclerRequest extends AppCompatActivity {
+
+public class RecyclerRequest extends AppCompatActivity { //NOSONAR
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;

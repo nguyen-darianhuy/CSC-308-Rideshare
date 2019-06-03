@@ -2,48 +2,33 @@ package com.polyride.entity;
 
 import java.util.Date;
 
-
-
 public class TripListing {
 
-    public Integer rideId;
-    public Integer driverId;
+    public String driverID;
     public Integer maxPassengers;
     public Integer numPassengers;
     public String destination;
     public String departure;
     public String departureDate;
-    public Date postDate;
 
     public TripListing() {}
 
-    public TripListing(Integer rideId, Integer driverId, Integer maxPassengers,
-                       String destination, String departure,
-                       String departureDate, Date postDate) {
-        this.rideId = rideId;
-        this.driverId = driverId;
+    public TripListing(String driverID, Integer maxPassengers, Integer numPassengers,
+                       String destination, String departure, String departureDate) {
+        this.driverID = driverID;
         this.maxPassengers = maxPassengers;
         this.numPassengers = numPassengers;
         this.destination = destination;
         this.departure = departure;
         this.departureDate = departureDate;
-        this.postDate = postDate;
     }
 
-    public Integer getRideId() {
-        return rideId;
+    public String getDriverID() {
+        return driverID;
     }
 
-    public void setRideId(Integer rideId) {
-        this.rideId = rideId;
-    }
-
-    public Integer getDriverId() {
-        return driverId;
-    }
-
-    public void setDriverId(Integer driverId) {
-        this.driverId = driverId;
+    public void setDriverID(String driverID) {
+        this.driverID = driverID;
     }
 
     public Integer getMaxPassengers() {
@@ -84,13 +69,5 @@ public class TripListing {
 
     public void setDepartureDate(String departureDate) {
         this.departureDate = departureDate;
-    }
-
-    public Date getPostDate() {
-        return postDate;
-    }
-
-    public void setPostDate(Date postDate) {
-        this.postDate = postDate;
     }
 }

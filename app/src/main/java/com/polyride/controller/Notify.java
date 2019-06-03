@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 
 import com.polyride.R;
 
-public class Notify extends AppCompatActivity {
+public class Notify extends AppCompatActivity {  //NOSONAR
 
     private ImageButton button;
 
