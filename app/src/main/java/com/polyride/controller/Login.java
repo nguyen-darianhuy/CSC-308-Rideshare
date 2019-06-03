@@ -77,7 +77,7 @@ public class Login extends AppCompatActivity { //NOSONAR
     }
 
     void nextActivity(){
-        Intent intent = new Intent(this, Profile2.class);
+        Intent intent = new Intent(this, RidesActivity.class);
         startActivity(intent);
     }
 
