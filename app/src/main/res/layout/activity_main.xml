@@ -35,7 +35,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="251dp"
         android:background="@mipmap/ic_mycar"
-        app:layout_constraintBottom_toTopOf="@+id/switch1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
