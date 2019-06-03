@@ -2,11 +2,11 @@ package com.polyride.entity;
 
 public class Review {
 
-    public Integer reviewId;
-    public Integer reviewerId;
-    public Integer revieweeId;
-    public String comment;
-    public Integer rating;
+    private Integer reviewId;
+    private Integer reviewerId;
+    private Integer revieweeId;
+    private String comment;
+    private Integer rating;
 
     public Review() {}
 
