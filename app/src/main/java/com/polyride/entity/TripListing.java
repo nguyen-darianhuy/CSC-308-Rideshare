@@ -1,5 +1,7 @@
 package com.polyride.entity;
 
+import com.google.firebase.Timestamp;
+
 import java.util.Date;
 
 public class TripListing {
