@@ -19,10 +19,7 @@ import com.polyride.R;
 public class Login extends AppCompatActivity { //NOSONAR
 
     private static final String TAG = "LOGINPASSWORD";
-
-    private TextInputLayout userLogin;
-    private TextInputLayout userPassword;
-
+    
     private Button signInButton;
     private Button createButton;
 
@@ -38,7 +35,7 @@ public class Login extends AppCompatActivity { //NOSONAR
         mAuth = FirebaseAuth.getInstance();
         loginWrapper = findViewById(R.id.textInputLayout3);
         passwordWrapper = findViewById(R.id.textInputLayout4);
-        signInButton = findViewById(R.id.button5);
+        Button signInButton = findViewById(R.id.button5);
         signInButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 loginActivity();
