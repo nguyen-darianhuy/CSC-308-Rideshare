@@ -1,6 +1,5 @@
 package com.polyride.controller;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,21 +7,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.polyride.R;
 
 public class Notify extends AppCompatActivity {  //NOSONAR
 
-    private ImageButton button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ImageButton button;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notify);
 
-        button = (ImageButton) findViewById(R.id.person_action);
+        button = findViewById(R.id.person_action);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -30,7 +27,7 @@ public class Notify extends AppCompatActivity {  //NOSONAR
             }
         });
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
