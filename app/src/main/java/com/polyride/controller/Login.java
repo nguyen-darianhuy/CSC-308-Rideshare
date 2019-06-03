@@ -20,8 +20,6 @@ public class Login extends AppCompatActivity { //NOSONAR
 
     private static final String TAG = "LOGINPASSWORD";
 
-
-
     private TextInputLayout loginWrapper;
     private TextInputLayout passwordWrapper;
     private FirebaseAuth mAuth;
