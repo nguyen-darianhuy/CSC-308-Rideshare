@@ -2,8 +2,6 @@ package com.polyride.entity;
 
 import java.util.Date;
 
-
-
 public class TripListing {
 
     public String driverID;
@@ -15,9 +13,9 @@ public class TripListing {
 
     public TripListing() {}
 
-    public TripListing(String driverId, Integer maxPassengers, Integer numPassengers,
+    public TripListing(String driverID, Integer maxPassengers, Integer numPassengers,
                        String destination, String departure, String departureDate) {
-        this.driverID = driverId;
+        this.driverID = driverID;
         this.maxPassengers = maxPassengers;
         this.numPassengers = numPassengers;
         this.destination = destination;
@@ -25,12 +23,12 @@ public class TripListing {
         this.departureDate = departureDate;
     }
 
-    public String getDriverId() {
+    public String getDriverID() {
         return driverID;
     }
 
-    public void setDriverId(String driverId) {
-        this.driverID = driverId;
+    public void setDriverID(String driverID) {
+        this.driverID = driverID;
     }
 
     public Integer getMaxPassengers() {
