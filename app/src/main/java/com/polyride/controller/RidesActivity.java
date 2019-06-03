@@ -1,5 +1,6 @@
 package com.polyride.controller;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -64,6 +65,20 @@ public class RidesActivity extends AppCompatActivity {
                 }
             });
             return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.navigation_profile:
+                Intent intent = new Intent(this, Profile.class);
+                startActivity(intent);
+                break;
+            case R.id.navigation_notifications:
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 
 
