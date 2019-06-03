@@ -20,6 +20,8 @@ public class Login extends AppCompatActivity { //NOSONAR
 
     private static final String TAG = "LOGINPASSWORD";
 
+
+
     private TextInputLayout loginWrapper;
     private TextInputLayout passwordWrapper;
     private FirebaseAuth mAuth;
@@ -32,18 +34,27 @@ public class Login extends AppCompatActivity { //NOSONAR
         mAuth = FirebaseAuth.getInstance();
         loginWrapper = findViewById(R.id.textInputLayout3);
         passwordWrapper = findViewById(R.id.textInputLayout4);
-        Button signInButton = findViewById(R.id.button5);
-        signInButton.setOnClickListener(new View.OnClickListener(){
+        Button button = findViewById(R.id.button5);
+        button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 loginActivity();
+            }
+        });
+
+        button = findViewById(R.id.button19);
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                createActivity();
             }
         });
     }
 
     void loginActivity(){
+
         // get the field
         String login = loginWrapper.getEditText().getText().toString().trim();
         String password = passwordWrapper.getEditText().getText().toString().trim();
+
         mAuth.signInWithEmailAndPassword(login, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -67,6 +78,11 @@ public class Login extends AppCompatActivity { //NOSONAR
 
     void nextActivity(){
         Intent intent = new Intent(this, Profile2.class);
+        startActivity(intent);
+    }
+
+    void createActivity(){
+        Intent intent = new Intent(this, Create.class);
         startActivity(intent);
     }
 }
