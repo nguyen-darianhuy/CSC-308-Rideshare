@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "743726631517-7h54rc0feg9vk42s4ht3820np3veqmop.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.polyride",
-            "certificate_hash": "4bd3a2aad3c44e0b48067433f2cc88a911722fbc"
-          }
-        },
-        {
           "client_id": "743726631517-sfb6iq36t4ghtmukn5h1ali3k2qen2im.apps.googleusercontent.com",
           "client_type": 3
         }

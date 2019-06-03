@@ -20,11 +20,11 @@ public class ListingAdapter extends FirestoreRecyclerAdapter<TripListing, Listin
 
     @Override
     protected void onBindViewHolder(@NonNull ListingHolder holder, int position, @NonNull TripListing model) {
-        holder.textViewProfileName.setText(model.getDriverId());
+        holder.textViewProfileName.setText(model.getDriverID());
         holder.textViewDepartureDestination.setText(model.getDeparture());
         holder.textViewSpotsRemaining.setText(String.valueOf(model.getMaxPassengers()));
         holder.textViewDepartureDate.setText(model.getDepartureDate());
-        holder.textViewRating.setText(model.getDriverId());
+        holder.textViewRating.setText(model.getDriverID());
     }
 
     @NonNull
@@ -43,11 +43,11 @@ public class ListingAdapter extends FirestoreRecyclerAdapter<TripListing, Listin
 
         public ListingHolder(View itemView) {
             super(itemView);
-            textViewProfileName =(TextView)itemView.findViewById(R.id.textViewProfileName);
-            textViewDepartureDestination = (TextView)itemView.findViewById(R.id.textViewDepartureDestination);
-            textViewSpotsRemaining = (TextView)itemView.findViewById(R.id.textViewSpotsRemaining);
-            textViewDepartureDate = (TextView)itemView.findViewById(R.id.textViewDepartureDate);
-            textViewRating = (TextView)itemView.findViewById(R.id.textViewRating);
+            textViewProfileName =itemView.findViewById(R.id.textViewProfileName);
+            textViewDepartureDestination = itemView.findViewById(R.id.textViewDepartureDestination);
+            textViewSpotsRemaining = itemView.findViewById(R.id.textViewSpotsRemaining);
+            textViewDepartureDate = itemView.findViewById(R.id.textViewDepartureDate);
+            textViewRating = itemView.findViewById(R.id.textViewRating);
         }
     }
 }
