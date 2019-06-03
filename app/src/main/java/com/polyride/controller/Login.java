@@ -20,8 +20,7 @@ public class Login extends AppCompatActivity { //NOSONAR
 
     private static final String TAG = "LOGINPASSWORD";
 
-    private Button signInButton;
-    private Button createButton;
+
 
     private TextInputLayout loginWrapper;
     private TextInputLayout passwordWrapper;
@@ -35,15 +34,15 @@ public class Login extends AppCompatActivity { //NOSONAR
         mAuth = FirebaseAuth.getInstance();
         loginWrapper = findViewById(R.id.textInputLayout3);
         passwordWrapper = findViewById(R.id.textInputLayout4);
-        Button signInButton = findViewById(R.id.button5);
-        signInButton.setOnClickListener(new View.OnClickListener(){
+        Button button = findViewById(R.id.button5);
+        button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 loginActivity();
             }
         });
 
-        createButton = findViewById(R.id.button19);
-        createButton.setOnClickListener(new View.OnClickListener(){
+        button = findViewById(R.id.button19);
+        button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 createActivity();
             }
