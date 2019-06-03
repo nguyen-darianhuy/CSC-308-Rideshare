@@ -17,10 +17,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.ExampleV
     private ArrayList<ExampleItem> mExampleList;
     private List<ExampleItem> exampleListFull;
 
-    //public ImageView mImageView;
-    //private TextView mTextView1;
-    //private TextView mTextView2;
-    //private TextView mTextView3;
 
     public static class ExampleViewHolder extends RecyclerView.ViewHolder{
 
