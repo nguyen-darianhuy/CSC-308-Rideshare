@@ -11,12 +11,12 @@ public class TripListing {
     public Integer numPassengers;
     public String destination;
     public String departure;
-    public Timestamp departureDate;
+    public String departureDate;
 
     public TripListing() {}
 
     public TripListing(String driverID, Integer maxPassengers, Integer numPassengers,
-                       String destination, String departure, Timestamp departureDate) {
+                       String destination, String departure, String departureDate) {
         this.driverID = driverID;
         this.maxPassengers = maxPassengers;
         this.numPassengers = numPassengers;
@@ -65,11 +65,11 @@ public class TripListing {
         this.departure = departure;
     }
 
-    public Timestamp getDepartureDate() {
+    public String getDepartureDate() {
         return departureDate;
     }
 
-    public void setDepartureDate(Timestamp departureDate) {
+    public void setDepartureDate(String departureDate) {
         this.departureDate = departureDate;
     }
 }

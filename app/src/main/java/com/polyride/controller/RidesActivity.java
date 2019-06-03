@@ -8,8 +8,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.firebase.ui.firestore.SnapshotParser;
-import com.google.firebase.Timestamp;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -33,7 +31,7 @@ public class RidesActivity extends AppCompatActivity {
                     snapshot.get("numPassengers", Integer.class),
                     snapshot.getString("destination"),
                     snapshot.getString("departure"),
-                    snapshot.get("departureDate", Timestamp.class));
+                    snapshot.getString("departureDate"));
             return listing;
         }
     };
