@@ -1,6 +1,8 @@
 package com.polyride.controller;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -28,6 +30,28 @@ public class RidesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rides);
+
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.nav_view);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.navigation_notifications:
+                        openNotifications();
+                        break;
+
+                    case R.id.navigation_profile:
+                        openProfile();
+                        break;
+
+
+
+                }
+                return true;
+            }
+        });
 
         ArrayList<ExampleItem> exampleList = new ArrayList<>();
         exampleList.add(new ExampleItem(R.mipmap.ic_raters, "Sarah Hyland", "2/3 Spots Remaining", "San Luis Obispo -> San Jose"));
@@ -70,7 +94,7 @@ public class RidesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.navigation_profile:
-                Intent intent = new Intent(this, Profile.class);
+                Intent intent = new Intent(this, Profile2.class);
                 startActivity(intent);
                 break;
             case R.id.navigation_notifications:
@@ -80,6 +104,18 @@ public class RidesActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    public void openProfile(){
+        Intent intent = new Intent(this, Profile2.class);
+        startActivity(intent);
+    }
+
+
+    public void openNotifications(){
+        Intent intent = new Intent(this, Notify.class);
+        startActivity(intent);
+    }
+
 
 
 
