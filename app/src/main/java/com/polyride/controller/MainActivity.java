@@ -10,14 +10,15 @@ import com.polyride.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
+    //private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Button button;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button)findViewById(R.id.button3);
+        button = findViewById(R.id.button3);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button = (Button)findViewById(R.id.button4);
+        button = findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
