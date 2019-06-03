@@ -19,7 +19,7 @@ import com.polyride.R;
 public class Login extends AppCompatActivity { //NOSONAR
 
     private static final String TAG = "LOGINPASSWORD";
-    
+
     private Button signInButton;
     private Button createButton;
 
