@@ -56,7 +56,7 @@ public class Create extends AppCompatActivity{  //NOSONAR
     }
 
     public void openActivity3(){
-        Intent intent = new Intent (this, Main2Activity.class);
+        Intent intent = new Intent (this, RidesActivity.class);
 
         Log.d("CLICK", "Register Activity Page");
 
@@ -112,7 +112,7 @@ public class Create extends AppCompatActivity{  //NOSONAR
     }
 
     void openMain2Activity(){
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, RidesActivity.class);
         startActivity(intent);
     }
 }
