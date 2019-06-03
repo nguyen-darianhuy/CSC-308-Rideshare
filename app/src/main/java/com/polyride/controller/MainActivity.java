@@ -1,16 +1,10 @@
 package com.polyride.controller;
 
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;  //NOSONAR
 import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
-
-
-//import com.google.android.gms.tasks.OnFailureListener;
-//import com.google.android.gms.tasks.OnSuccessListener;
-//import com.google.firebase.firestore.DocumentReference;
-//import com.google.firebase.firestore.FirebaseFirestore;
 
 import com.polyride.R;
 
