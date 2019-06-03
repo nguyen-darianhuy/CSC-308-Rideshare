@@ -10,7 +10,7 @@
     >
 
     <RelativeLayout
-        android:layout_width="388dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp">
 
@@ -21,7 +21,7 @@
             android:padding="2dp" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewProfileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -29,75 +29,73 @@
             android:layout_marginTop="11dp"
             android:layout_toEndOf="@+id/imageView"
             android:fontFamily="sans-serif-light"
-            android:text="Line 1"
+            android:text="Profile Name"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="371dp"
+            android:id="@+id/textViewDepartureDestination"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_marginStart="-64dp"
+            android:layout_below="@+id/textViewProfileName"
+            android:layout_marginStart="-66dp"
             android:layout_marginTop="22dp"
             android:layout_toEndOf="@+id/imageView"
-            android:text="Line 2"
+            android:text="Departure -> Destination"
             android:textColor="@android:color/black"
             android:textSize="17sp" />
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/buttonRequestSpot"
             android:layout_width="144dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginEnd="237dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="155dp"
+            android:layout_marginEnd="209dp"
             android:background="#839AA2"
-            android:text="Reserve Ride"
+            android:text="Request Spot"
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/button13"
+            android:id="@+id/buttonRideDetails"
             android:layout_width="144dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="182dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginEnd="51dp"
+            android:layout_marginStart="199dp"
+            android:layout_marginTop="154dp"
+            android:layout_marginEnd="34dp"
             android:background="#839AA2"
-            android:text="View Route"
+            android:text="Ride Details"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewSpotsRemaining"
             android:layout_width="372dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="95dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="103dp"
+            android:layout_marginEnd="9dp"
             android:fontFamily="sans-serif"
-            android:text="Spots Remaining"
+            android:text="Spots Remaining: 4"
             android:textColor="@android:color/black"
-            android:textSize="17sp" />
+            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/imagethirdStar3"
             android:layout_width="35dp"
             android:layout_height="34dp"
-            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="285dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="68dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="51dp"
             android:layout_marginBottom="8dp"
             android:background="@mipmap/ic_star"
             android:contentDescription="TODO" />
@@ -109,14 +107,14 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="-4dp"
-            android:layout_marginTop="242dp"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="218dp"
             android:layout_marginEnd="14dp"
             android:background="#839AA2"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView39"
+            android:id="@+id/textViewDepartureDate"
             android:layout_width="323dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -125,20 +123,20 @@
             android:layout_marginStart="7dp"
             android:layout_marginTop="121dp"
             android:layout_marginEnd="32dp"
-            android:text="Departure: January 14, 5:30 PM"
+            android:text="Date: January 14, 5:30 PM"
             android:textColor="@android:color/black"
-            android:textSize="17sp" />
+            android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/textView34"
+            android:id="@+id/textViewRating"
             android:layout_width="47dp"
             android:layout_height="27dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="319dp"
+            android:layout_marginStart="315dp"
             android:layout_marginTop="19dp"
-            android:layout_marginEnd="-3dp"
+            android:layout_marginEnd="1dp"
             android:layout_marginBottom="8dp"
             android:paddingLeft="5dp"
             android:text="3.8/5"
