@@ -27,26 +27,22 @@ import com.polyride.R;
 public class Create extends AppCompatActivity{  //NOSONAR
     private static final String TAG = "EmailPassword";
 
-    private TextView mTextMessage;
 
-    private TextInputLayout firstName;
-    private TextInputLayout lastName;
+
     private TextInputLayout email;
     private TextInputLayout password;
 
-    private Button signUpButton;
-    private Button existingAccountButton;
+
 
     private FirebaseAuth mAuth;
 
-    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
-        button = (Button)findViewById(R.id.button5);
+        Button button = (Button)findViewById(R.id.button5);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -61,14 +57,14 @@ public class Create extends AppCompatActivity{  //NOSONAR
         Log.d("CLICK", "Register Activity Page");
 
         // text fields
-        firstName = findViewById(R.id.textInputLayout);
-        lastName = findViewById(R.id.textInputLayout2);
+         TextInputLayout firstName = findViewById(R.id.textInputLayout);
+         TextInputLayout lastName = findViewById(R.id.textInputLayout2);
         email = findViewById(R.id.textInputLayout3);
         password = findViewById(R.id.textInputLayout4);
 
         // buttons
-        signUpButton = findViewById(R.id.button5);
-        existingAccountButton = findViewById(R.id.button7);
+        Button signUpButton = findViewById(R.id.button5);
+        Button existingAccountButton = findViewById(R.id.button7);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
