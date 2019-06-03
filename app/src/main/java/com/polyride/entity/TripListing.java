@@ -1,5 +1,7 @@
 package com.polyride.entity;
 
+import com.google.firebase.Timestamp;
+
 import java.util.Date;
 
 public class TripListing {
@@ -9,12 +11,12 @@ public class TripListing {
     public Integer numPassengers;
     public String destination;
     public String departure;
-    public String departureDate;
+    public Timestamp departureDate;
 
     public TripListing() {}
 
     public TripListing(String driverID, Integer maxPassengers, Integer numPassengers,
-                       String destination, String departure, String departureDate) {
+                       String destination, String departure, Timestamp departureDate) {
         this.driverID = driverID;
         this.maxPassengers = maxPassengers;
         this.numPassengers = numPassengers;
@@ -63,11 +65,11 @@ public class TripListing {
         this.departure = departure;
     }
 
-    public String getDepartureDate() {
+    public Timestamp getDepartureDate() {
         return departureDate;
     }
 
-    public void setDepartureDate(String departureDate) {
+    public void setDepartureDate(Timestamp departureDate) {
         this.departureDate = departureDate;
     }
 }

@@ -23,7 +23,7 @@ public class ListingAdapter extends FirestoreRecyclerAdapter<TripListing, Listin
         holder.textViewProfileName.setText(model.getDriverID());
         holder.textViewDepartureDestination.setText(model.getDeparture());
         holder.textViewSpotsRemaining.setText(String.valueOf(model.getMaxPassengers()));
-        holder.textViewDepartureDate.setText(model.getDepartureDate());
+        holder.textViewDepartureDate.setText(model.getDepartureDate().toString());
         holder.textViewRating.setText(model.getDriverID());
     }
 
