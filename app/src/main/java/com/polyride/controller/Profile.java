@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -59,8 +58,8 @@ public class Profile extends AppCompatActivity { //NOSONAR
                         vehicle.setText(document.get("vehicle", String.class));
                         homeCity.setText(document.get("homeCity", String.class));
                     } else {
-                        User user = new User();
-                        docRef.set(user);
+                        User newUser = new User();
+                        docRef.set(newUser);
                     }
                 }
             });
@@ -68,17 +67,17 @@ public class Profile extends AppCompatActivity { //NOSONAR
 
     }
 
-    public void save(View view) {
+    public void save() {
         final DocumentReference docRef = db.collection("Users").document(user.getUid());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
-                    User user = new User(name.getText().toString(), email.getText().toString(),
+                    User userData = new User(name.getText().toString(), email.getText().toString(),
                                           vehicle.getText().toString(), bio.getText().toString(),
                                           homeCity.getText().toString());
-                    docRef.set(user);
+                    docRef.set(userData);
                 }
             }
         });
