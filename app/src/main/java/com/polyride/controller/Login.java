@@ -22,7 +22,10 @@ public class Login extends AppCompatActivity { //NOSONAR
 
     private TextInputLayout userLogin;
     private TextInputLayout userPassword;
+
     private Button signInButton;
+    private Button createButton;
+
     private TextInputLayout loginWrapper;
     private TextInputLayout passwordWrapper;
     private FirebaseAuth mAuth;
@@ -31,7 +34,7 @@ public class Login extends AppCompatActivity { //NOSONAR
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        
+
         mAuth = FirebaseAuth.getInstance();
         loginWrapper = findViewById(R.id.textInputLayout3);
         passwordWrapper = findViewById(R.id.textInputLayout4);
@@ -39,6 +42,13 @@ public class Login extends AppCompatActivity { //NOSONAR
         signInButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 loginActivity();
+            }
+        });
+
+        createButton = findViewById(R.id.button19);
+        createButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                createActivity();
             }
         });
     }
@@ -72,6 +82,11 @@ public class Login extends AppCompatActivity { //NOSONAR
 
     void nextActivity(){
         Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+    }
+
+    void createActivity(){
+        Intent intent = new Intent(this, Create.class);
         startActivity(intent);
     }
 }
