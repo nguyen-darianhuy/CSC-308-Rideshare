@@ -90,7 +90,7 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
 
     }
 
-    public void save(View view) { // NO SONAR
+    public void save(View view) { // NOSONAR
         final DocumentReference docRef = db.collection("Users").document(user.getUid());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override

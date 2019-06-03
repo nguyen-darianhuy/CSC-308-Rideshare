@@ -35,7 +35,10 @@ public class Login extends AppCompatActivity { //NOSONAR
         Button button = findViewById(R.id.button5);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                loginActivity();
+                // get the field
+                String login = loginWrapper.getEditText().getText().toString().trim();
+                String password = passwordWrapper.getEditText().getText().toString().trim();
+                loginActivity(login, password);
             }
         });
 
@@ -47,11 +50,7 @@ public class Login extends AppCompatActivity { //NOSONAR
         });
     }
 
-    void loginActivity(){
-
-        // get the field
-        String login = loginWrapper.getEditText().getText().toString().trim();
-        String password = passwordWrapper.getEditText().getText().toString().trim();
+    void loginActivity(String login, String password){
 
         mAuth.signInWithEmailAndPassword(login, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -63,7 +62,6 @@ public class Login extends AppCompatActivity { //NOSONAR
                             Toast.makeText(Login.this, "Login Success!",
                                     Toast.LENGTH_SHORT).show();
                             nextActivity();
-
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
