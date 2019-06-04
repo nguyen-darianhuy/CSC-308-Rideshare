@@ -52,6 +52,9 @@ public class RidesActivity extends AppCompatActivity {
                     case R.id.navigation_notifications:
                         openNotifications();
                         break;
+
+                    default:
+                        break;
                 }
                 return true;
             }
@@ -84,7 +87,7 @@ public class RidesActivity extends AppCompatActivity {
             }
         };
 
-        Query query  = listingRef.orderBy("departure");
+        Query query = listingRef.orderBy("departure");
         FirestoreRecyclerOptions<TripListing> options = new FirestoreRecyclerOptions.Builder<TripListing>()
                 .setQuery(query, parser)
                 .build();
@@ -97,11 +100,6 @@ public class RidesActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         adapter.startListening();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
     }
 
     @Override
