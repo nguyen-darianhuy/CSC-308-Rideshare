@@ -29,6 +29,7 @@ public class Create extends AppCompatActivity{  //NOSONAR
 
     private TextInputLayout email;
     private TextInputLayout password;
+    private Button button;
 
 
 
@@ -39,6 +40,15 @@ public class Create extends AppCompatActivity{  //NOSONAR
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
+
+
+        button = (Button) findViewById(R.id.button7);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openLogin();
+            }
+        });
 
         Button button = findViewById(R.id.button5);
         button.setOnClickListener(new View.OnClickListener(){
@@ -113,6 +123,11 @@ public class Create extends AppCompatActivity{  //NOSONAR
 
     void openCreateActvity(){
         Intent intent = new Intent(this ,Login.class);
+        startActivity(intent);
+    }
+
+    void openLogin() {
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
 }
