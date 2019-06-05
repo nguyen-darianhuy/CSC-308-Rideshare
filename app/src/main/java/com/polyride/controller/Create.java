@@ -29,8 +29,6 @@ public class Create extends AppCompatActivity{  //NOSONAR
 
     private TextInputLayout email;
     private TextInputLayout password;
-    private Button button;
-
 
 
     private FirebaseAuth mAuth;
@@ -42,7 +40,7 @@ public class Create extends AppCompatActivity{  //NOSONAR
         setContentView(R.layout.activity_create);
 
         // already have an account button
-        button = findViewById(R.id.button7);
+        Button button = findViewById(R.id.button7);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -114,7 +112,7 @@ public class Create extends AppCompatActivity{  //NOSONAR
         Intent intent = new Intent(this, RidesActivity.class);
         startActivity(intent);
     }
-    
+
 
     void openLogin() {
         Intent intent = new Intent(this, Login.class);
