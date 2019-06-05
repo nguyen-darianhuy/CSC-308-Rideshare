@@ -5,5 +5,5 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({TripListingAvailableSeatsUnitTest.class, TripListingRouteUnitTest.class})
-public class TripListingTestSuite {
+public class TestSuite1 {
 }
