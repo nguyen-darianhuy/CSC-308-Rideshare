@@ -34,15 +34,15 @@ public class TripListing {
     }
 
     public String getRoute() {
-        String destination = getDestination();
-        String departure = getDeparture();
-        if (destination.equals("")) {
-            destination = "Undefined";
+        String dest = getDestination();
+        String depa = getDeparture();
+        if (dest.equals("")) {
+            dest = "Undefined";
         }
-        if (departure.equals("")) {
-            departure = "Undefined";
+        if (depa.equals("")) {
+            depa = "Undefined";
         }
-        return departure + " -> " + destination;
+        return depa + " -> " + dest;
     }
 
     public Integer getAvailableSeats() {
