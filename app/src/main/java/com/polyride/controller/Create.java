@@ -114,11 +114,7 @@ public class Create extends AppCompatActivity{  //NOSONAR
         Intent intent = new Intent(this, RidesActivity.class);
         startActivity(intent);
     }
-
-    void openCreateActvity(){
-        Intent intent = new Intent(this ,Login.class);
-        startActivity(intent);
-    }
+    
 
     void openLogin() {
         Intent intent = new Intent(this, Login.class);
