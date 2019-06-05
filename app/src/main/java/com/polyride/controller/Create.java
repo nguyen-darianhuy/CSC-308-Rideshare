@@ -50,8 +50,6 @@ public class Create extends AppCompatActivity{  //NOSONAR
     }
 
     public void openActivity3(){
-        Intent intent = new Intent (this, RidesActivity.class);
-
         Log.d("CLICK", "Register Activity Page");
 
         // text fields
