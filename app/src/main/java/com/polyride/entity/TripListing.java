@@ -1,19 +1,25 @@
 package com.polyride.entity;
 
+import com.google.firebase.firestore.DocumentSnapshot;
+
 public class TripListing {
 
-    public User driver;
-    public Integer maxPassengers;
-    public Integer numPassengers;
-    public String destination;
-    public String departure;
-    public String departureDate;
+    private User driverID;
+    private Integer maxPassengers;
+    private Integer numPassengers;
+    private String destination;
+    private String departure;
+    private String departureDate;
 
     public TripListing() {}
 
+    public TripListing(DocumentSnapshot document, User user) {
+        setTripAttributes(document, user);
+    }
+
     public TripListing(User driver, Integer maxPassengers, Integer numPassengers,
                        String destination, String departure, String departureDate) {
-        this.driver = driver;
+        this.driverID = driver;
         this.maxPassengers = maxPassengers;
         this.numPassengers = numPassengers;
         this.destination = destination;
@@ -24,7 +30,7 @@ public class TripListing {
     @Override
     public String toString() {
         return "TripListing{" +
-                "driver=" + driver +
+                "driver=" + driverID +
                 ", maxPassengers=" + maxPassengers +
                 ", numPassengers=" + numPassengers +
                 ", destination='" + destination + '\'' +
@@ -33,12 +39,21 @@ public class TripListing {
                 '}';
     }
 
+    private void setTripAttributes(DocumentSnapshot document, User user) {
+        driverID = user;
+        maxPassengers = document.get("maxPassengers", Integer.class);
+        numPassengers = document.get("numPassengers", Integer.class);
+        destination = document.getString("destination");
+        departure = document.getString("departure");
+        departureDate = document.getString("departureDate");
+    }
+
     public User getDriver() {
-        return driver;
+        return driverID;
     }
 
     public void setDriver(User driver) {
-        this.driver = driver;
+        this.driverID = driver;
     }
 
     public Integer getMaxPassengers() {
