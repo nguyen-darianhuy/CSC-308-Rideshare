@@ -11,7 +11,7 @@ import com.polyride.R;
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //NOSONAR
         Button button;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
