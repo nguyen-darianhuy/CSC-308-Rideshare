@@ -1,7 +1,6 @@
 package com.polyride.controller;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TextInputLayout;
@@ -53,6 +52,7 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
 
                     case R.id.navigation_profile:
                         openProfile();
+                        break;
 
                     default:
                         break;
