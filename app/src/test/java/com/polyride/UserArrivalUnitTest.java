@@ -12,7 +12,7 @@ public class UserArrivalUnitTest {
         User user = new User();
         user.setArrivalCity("San Jose");
         String arrival = user.getArrivalCity();
-        assertEquals(arrival, "San Jose");
+        assertEquals("San Jose", arrival);
     }
 
     @Test
@@ -20,6 +20,6 @@ public class UserArrivalUnitTest {
         User user = new User();
         user.setArrivalCity("Elk Grove");
         String arrival = user.getArrivalCity();
-        assertEquals(arrival, "Elk Grove");
+        assertEquals("Elk Grove",arrival);
     }
 }

@@ -12,7 +12,7 @@ public class UserBioUnitTest {
         User user = new User();
         user.setBio("Ride with me pls I'm funny I swear");
         String bio = user.getBio();
-        assertEquals(bio, "Ride with me pls I'm funny I swear");
+        assertEquals("Ride with me pls I'm funny I swear", bio);
     }
 
     @Test
@@ -20,6 +20,6 @@ public class UserBioUnitTest {
         User user = new User();
         user.setBio("Raptors in 7");
         String bio = user.getBio();
-        assertEquals(bio, "Raptors in 7");
+        assertEquals("Raptors in 7", bio);
     }
 }

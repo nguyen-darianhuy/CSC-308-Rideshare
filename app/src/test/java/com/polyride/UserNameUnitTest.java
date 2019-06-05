@@ -12,7 +12,7 @@ public class UserNameUnitTest {
         User user = new User();
         user.setName("John Doe");
         String name = user.getName();
-        assertEquals(name, "John Doe");
+        assertEquals("John Doe", name);
     }
 
     @Test
@@ -20,6 +20,6 @@ public class UserNameUnitTest {
         User user = new User();
         user.setName("Davide Falessi");
         String name = user.getName();
-        assertEquals(name, "Davide Falessi");
+        assertEquals("Davide Falessi", name);
     }
 }

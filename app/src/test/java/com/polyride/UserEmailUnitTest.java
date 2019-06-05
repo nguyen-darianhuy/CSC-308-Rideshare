@@ -12,7 +12,7 @@ public class UserEmailUnitTest {
         User user = new User();
         user.setEmail("nctu@calpoly.edu");
         String email = user.getEmail();
-        assertEquals(email, "nctu@calpoly.edu");
+        assertEquals("nctu@calpoly.edu", email);
     }
 
     @Test
@@ -20,6 +20,6 @@ public class UserEmailUnitTest {
         User user = new User();
         user.setEmail("mpatacsil@calpoly.edu");
         String email = user.getEmail();
-        assertEquals(email, "mpatacsil@calpoly.edu");
+        assertEquals("mpatacsil@calpoly.edu",email);
     }
 }
