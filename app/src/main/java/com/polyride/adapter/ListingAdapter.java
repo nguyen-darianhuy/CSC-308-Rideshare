@@ -5,12 +5,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.polyride.entity.TripListing;
 import com.polyride.*;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListingAdapter extends FirestoreRecyclerAdapter<TripListing, ListingAdapter.ListingHolder> {
 
