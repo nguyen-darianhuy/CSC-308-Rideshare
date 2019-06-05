@@ -18,7 +18,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 
 import com.polyride.R;
@@ -71,8 +70,6 @@ public class Create extends AppCompatActivity{  //NOSONAR
                 createAccount(inputEmail, inputPass);
             }
         });
-
-        final Object _this = this;
 
         existingAccountButton.setOnClickListener(new View.OnClickListener(){
             @Override
