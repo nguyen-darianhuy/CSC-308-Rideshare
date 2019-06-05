@@ -1,12 +1,8 @@
 package com.polyride.entity;
 
-import com.google.firebase.Timestamp;
-
-import java.util.Date;
-
 public class TripListing {
 
-    public String driverID;
+    public User driver;
     public Integer maxPassengers;
     public Integer numPassengers;
     public String destination;
@@ -15,9 +11,9 @@ public class TripListing {
 
     public TripListing() {}
 
-    public TripListing(String driverID, Integer maxPassengers, Integer numPassengers,
+    public TripListing(User driver, Integer maxPassengers, Integer numPassengers,
                        String destination, String departure, String departureDate) {
-        this.driverID = driverID;
+        this.driver = driver;
         this.maxPassengers = maxPassengers;
         this.numPassengers = numPassengers;
         this.destination = destination;
@@ -25,12 +21,24 @@ public class TripListing {
         this.departureDate = departureDate;
     }
 
-    public String getDriverID() {
-        return driverID;
+    @Override
+    public String toString() {
+        return "TripListing{" +
+                "driver=" + driver +
+                ", maxPassengers=" + maxPassengers +
+                ", numPassengers=" + numPassengers +
+                ", destination='" + destination + '\'' +
+                ", departure='" + departure + '\'' +
+                ", departureDate='" + departureDate + '\'' +
+                '}';
     }
 
-    public void setDriverID(String driverID) {
-        this.driverID = driverID;
+    public User getDriver() {
+        return driver;
+    }
+
+    public void setDriver(User driver) {
+        this.driver = driver;
     }
 
     public Integer getMaxPassengers() {

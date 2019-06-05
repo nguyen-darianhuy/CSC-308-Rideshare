@@ -3,6 +3,7 @@ package com.polyride.controller;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -56,14 +57,13 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
         db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
 
-        name = findViewById(R.id.textInputLayout);
-        email = findViewById(R.id.textInputLayout3);
-        bio = findViewById(R.id.textInputLayout2);
-        number = findViewById(R.id.textInputLayout4);
-        departureCity = findViewById(R.id.textInputLayout5);
-        arrivalCity = findViewById(R.id.textInputLayout6);
+        name = ((TextInputLayout)findViewById(R.id.textInputLayout)).getEditText();
+        email = ((TextInputLayout)findViewById(R.id.textInputLayout3)).getEditText();
+        bio = ((TextInputLayout)findViewById(R.id.textInputLayout2)).getEditText();
+        number = ((TextInputLayout)findViewById(R.id.textInputLayout4)).getEditText();
+        departureCity = ((TextInputLayout)findViewById(R.id.textInputLayout5)).getEditText();
+        arrivalCity = ((TextInputLayout)findViewById(R.id.textInputLayout6)).getEditText();
 
-        auth.signInWithEmailAndPassword("dnguy235@calpoly.edu", "asdfasdf");
         user = auth.getCurrentUser();
 
 
@@ -79,15 +79,17 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
                         email.setText(document.get("email", String.class));
                         bio.setText(document.get("bio", String.class));
                         number.setText(document.get("number", String.class));
-                        arrivalCity.setText(document.get("homeCity", String.class));
+                        departureCity.setText(document.get("departureCity", String.class));
+                        arrivalCity.setText(document.get("arrivalCity", String.class));
                     } else {
                         User newUser = new User();
                         docRef.set(newUser);
                     }
                 }
             });
+        } else {
+            openLogin();
         }
-
     }
 
     public void save(View view) { // NOSONAR
@@ -97,9 +99,12 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
-                    User userData = new User(name.getText().toString(), email.getText().toString(),
-                            number.getText().toString(), bio.getText().toString(),
-                            arrivalCity.getText().toString());
+                    User userData = new User(name.getText().toString(),
+                                             email.getText().toString(),
+                                             bio.getText().toString(),
+                                             number.getText().toString(),
+                                             departureCity.getText().toString(),
+                                             arrivalCity.getText().toString());
                     docRef.set(userData);
                 }
             }
@@ -114,6 +119,11 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
 
     public void openNotifications(){
         Intent intent = new Intent(this, Notify.class);
+        startActivity(intent);
+    }
+
+    public void openLogin(){
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
 

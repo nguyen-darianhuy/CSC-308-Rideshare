@@ -20,11 +20,10 @@ public class ListingAdapter extends FirestoreRecyclerAdapter<TripListing, Listin
 
     @Override
     protected void onBindViewHolder(@NonNull ListingHolder holder, int position, @NonNull TripListing model) {
-        holder.textViewProfileName.setText(model.getDriverID());
-        holder.textViewDepartureDestination.setText(model.getDeparture());
-        holder.textViewSpotsRemaining.setText(String.valueOf(model.getMaxPassengers()));
-        holder.textViewDepartureDate.setText(model.getDepartureDate().toString());
-        holder.textViewRating.setText(model.getDriverID());
+        holder.textViewProfileName.setText(model.getDriver().getName());
+        holder.textViewDepartureDestination.setText(model.getDeparture() + " -> " + model.getDestination());
+        holder.textViewSpotsRemaining.setText("Spots Remaining: " + (model.getMaxPassengers()-model.getNumPassengers()));
+        holder.textViewDepartureDate.setText("Departure Date: " + model.getDepartureDate());
     }
 
     @NonNull
