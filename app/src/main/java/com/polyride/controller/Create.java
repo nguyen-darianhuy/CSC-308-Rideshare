@@ -18,7 +18,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 
 import com.polyride.R;
@@ -56,8 +55,6 @@ public class Create extends AppCompatActivity{  //NOSONAR
         Log.d("CLICK", "Register Activity Page");
 
         // text fields
-         TextInputLayout firstName = findViewById(R.id.textInputLayout);
-         TextInputLayout lastName = findViewById(R.id.textInputLayout2);
         email = findViewById(R.id.textInputLayout3);
         password = findViewById(R.id.textInputLayout4);
 
@@ -71,6 +68,13 @@ public class Create extends AppCompatActivity{  //NOSONAR
                 String inputEmail = email.getEditText().getText().toString().trim();
                 String inputPass = password.getEditText().getText().toString().trim();
                 createAccount(inputEmail, inputPass);
+            }
+        });
+
+        existingAccountButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openCreateActvity();
             }
         });
         mAuth = FirebaseAuth.getInstance();
@@ -90,7 +94,6 @@ public class Create extends AppCompatActivity{  //NOSONAR
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(getApplicationContext(), "Account Made.",
                                     Toast.LENGTH_SHORT).show();
                             openMain2Activity();
@@ -99,7 +102,6 @@ public class Create extends AppCompatActivity{  //NOSONAR
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(getApplicationContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
                         }
                     }
         // [END create_user_with_email]
@@ -108,6 +110,11 @@ public class Create extends AppCompatActivity{  //NOSONAR
 
     void openMain2Activity(){
         Intent intent = new Intent(this, RidesActivity.class);
+        startActivity(intent);
+    }
+
+    void openCreateActvity(){
+        Intent intent = new Intent(this ,Login.class);
         startActivity(intent);
     }
 }

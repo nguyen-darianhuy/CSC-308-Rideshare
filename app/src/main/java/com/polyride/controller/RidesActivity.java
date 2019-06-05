@@ -27,7 +27,7 @@ import com.polyride.entity.User;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RidesActivity extends AppCompatActivity {
+public class RidesActivity extends AppCompatActivity { //NOSONAR
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference listingRef = db.collection("TripListing");
@@ -76,14 +76,14 @@ public class RidesActivity extends AppCompatActivity {
         SnapshotParser<TripListing> parser = new SnapshotParser<TripListing>() {
             @NonNull
             public TripListing parseSnapshot(@NonNull DocumentSnapshot snapshot) {
-                TripListing listing = new TripListing(
+                return new TripListing(
                         idToDriver.get(snapshot.getString("driverID")),
                         snapshot.get("maxPassengers", Integer.class),
                         snapshot.get("numPassengers", Integer.class),
                         snapshot.getString("destination"),
                         snapshot.getString("departure"),
-                        snapshot.getString("departureDate"));
-                return listing;
+                        snapshot.getString("departureDate")
+                );
             }
         };
 
