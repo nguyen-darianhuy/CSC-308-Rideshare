@@ -41,8 +41,8 @@ public class Create extends AppCompatActivity{  //NOSONAR
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
-
-        button = (Button) findViewById(R.id.button7);
+        // already have an account button
+        button = findViewById(R.id.button7);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -50,7 +50,8 @@ public class Create extends AppCompatActivity{  //NOSONAR
             }
         });
 
-        Button button = findViewById(R.id.button5);
+        //  signup button
+        button = findViewById(R.id.button5);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -68,7 +69,6 @@ public class Create extends AppCompatActivity{  //NOSONAR
 
         // buttons
         Button signUpButton = findViewById(R.id.button5);
-        Button existingAccountButton = findViewById(R.id.button7);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,12 +79,6 @@ public class Create extends AppCompatActivity{  //NOSONAR
             }
         });
 
-        existingAccountButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                openCreateActvity();
-            }
-        });
         mAuth = FirebaseAuth.getInstance();
     }
 
