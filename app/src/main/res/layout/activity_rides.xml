@@ -7,6 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".controller.RidesActivity">
 
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="2dp"
+        android:background="@android:color/white"
+        android:text="+  Add Listing"
+        android:textColor="#839AA2"
+        android:textSize="16sp" />
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/nav_view"
 
@@ -30,12 +45,15 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="627dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/nav_view"
-        android:layout_marginBottom="3dp"
+        android:layout_below="@+id/button14"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="6dp"
         android:background="@android:color/darker_gray"
         android:padding="1dp"
         android:scrollbars="vertical">
 
     </android.support.v7.widget.RecyclerView>
+
 </RelativeLayout>

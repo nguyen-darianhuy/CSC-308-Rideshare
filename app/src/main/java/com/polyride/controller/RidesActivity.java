@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.firebase.ui.firestore.SnapshotParser;
@@ -19,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
 import com.polyride.R;
 import com.polyride.entity.TripListing;
 import com.polyride.adapter.ListingAdapter;
@@ -27,7 +30,7 @@ import com.polyride.entity.User;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RidesActivity extends AppCompatActivity {
+public class RidesActivity extends AppCompatActivity { //NOSONAR
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference listingRef = db.collection("TripListing");
@@ -37,8 +40,17 @@ public class RidesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Button button;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rides);
+
+        button = findViewById(R.id.button14);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openAddListing();
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -76,14 +88,14 @@ public class RidesActivity extends AppCompatActivity {
         SnapshotParser<TripListing> parser = new SnapshotParser<TripListing>() {
             @NonNull
             public TripListing parseSnapshot(@NonNull DocumentSnapshot snapshot) {
-                TripListing listing = new TripListing(
+                return new TripListing(
                         idToDriver.get(snapshot.getString("driverID")),
                         snapshot.get("maxPassengers", Integer.class),
                         snapshot.get("numPassengers", Integer.class),
                         snapshot.getString("destination"),
                         snapshot.getString("departure"),
-                        snapshot.getString("departureDate"));
-                return listing;
+                        snapshot.getString("departureDate")
+                );
             }
         };
 
@@ -116,6 +128,11 @@ public class RidesActivity extends AppCompatActivity {
 
     public void openNotifications(){
         Intent intent = new Intent(this, Notify.class);
+        startActivity(intent);
+    }
+
+    public void openAddListing(){
+        Intent intent = new Intent(this, AddListing.class);
         startActivity(intent);
     }
 }

@@ -37,7 +37,7 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile2);
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -48,6 +48,13 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
 
                     case R.id.navigation_notifications:
                         openNotifications();
+                        break;
+
+                    case R.id.navigation_profile:
+                        openProfile();
+                        break;
+
+                    default:
                         break;
                 }
                 return true;
@@ -92,7 +99,7 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
         }
     }
 
-    public void save(View view) { // NO SONAR
+    public void save(View view) { // NOSONAR
         final DocumentReference docRef = db.collection("Users").document(user.getUid());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -124,6 +131,11 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
 
     public void openLogin(){
         Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+    }
+
+    public void openProfile(){
+        Intent intent = new Intent(this, Profile2.class);
         startActivity(intent);
     }
 

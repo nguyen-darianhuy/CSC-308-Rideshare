@@ -22,7 +22,6 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.polyride.R;
-import com.polyride.entity.TripListing;
 import com.polyride.entity.User;
 
 import java.util.Calendar;
@@ -31,7 +30,6 @@ import java.util.Map;
 
 public class AddListing extends AppCompatActivity { //NOSONAR
     private FirebaseFirestore db;
-    private FirebaseAuth auth;
     private FirebaseUser user;
 
     private static final String TAG = "AddListing";
@@ -48,7 +46,7 @@ public class AddListing extends AppCompatActivity { //NOSONAR
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_listing);
-        mDisplayDate = (TextView) findViewById(R.id.DatePicker);
+        mDisplayDate = findViewById(R.id.DatePicker);
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +58,8 @@ public class AddListing extends AppCompatActivity { //NOSONAR
 
                 DatePickerDialog dialog = new DatePickerDialog(
                         AddListing.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth, //NOSONAR
+                        mDateSetListener, //NOSONAR
                         year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
@@ -83,16 +81,16 @@ public class AddListing extends AppCompatActivity { //NOSONAR
         maxPassengersLayout = findViewById(R.id.textInputLayout4);
 
         db = FirebaseFirestore.getInstance();
-        auth = FirebaseAuth.getInstance();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
-        if (user != null) {
-
+        if (user == null) {
+            openLogin();
         }
 
     }
 
-    public void submit(View view) { // NO SONAR
+    public void submit(View view) { // NOSONAR
         final DocumentReference docRef = db.collection("Users").document(user.getUid());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -101,13 +99,13 @@ public class AddListing extends AppCompatActivity { //NOSONAR
                 if (document.exists()) {
                     User driver = new User();
                     driver.setUserAttributes(document);
-                    createListing(driver);
+                    createListing();
                 }
             }
         });
     }
 
-    public void createListing(final User driver) {
+    public void createListing() {
         Map<String, Object> listingData = new HashMap<>();
         listingData.put("departure", departureLayout.getEditText().getText().toString());
         listingData.put("departureDate", mDisplayDate.getText().toString());
@@ -127,6 +125,11 @@ public class AddListing extends AppCompatActivity { //NOSONAR
 
     public void openRideListing(){
         Intent intent = new Intent(this, RidesActivity.class);
+        startActivity(intent);
+    }
+
+    public void openLogin(){
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
 

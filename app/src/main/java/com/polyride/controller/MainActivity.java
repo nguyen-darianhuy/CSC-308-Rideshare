@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.polyride.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity { //NOSONAR
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

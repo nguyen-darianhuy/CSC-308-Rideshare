@@ -2,6 +2,8 @@ package com.polyride.entity;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 
+import java.util.Objects;
+
 public class User {
     private String name;
     private String bio;
@@ -23,6 +25,24 @@ public class User {
 
     public User(DocumentSnapshot document) {
         setUserAttributes(document);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name) &&
+                Objects.equals(bio, user.bio) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(number, user.number) &&
+                Objects.equals(departureCity, user.departureCity) &&
+                Objects.equals(arrivalCity, user.arrivalCity);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, bio, email, number, departureCity, arrivalCity);
     }
 
     @Override
