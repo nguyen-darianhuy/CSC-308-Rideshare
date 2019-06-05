@@ -7,9 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +23,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import com.polyride.R;
-import com.polyride.RequestAdapter;
 import com.polyride.entity.TripListing;
 import com.polyride.adapter.ListingAdapter;
 import com.polyride.entity.User;
@@ -41,7 +37,6 @@ public class RidesActivity extends AppCompatActivity { //NOSONAR
 
     private final Map<String, User> idToDriver = new HashMap<>();
     private ListingAdapter adapter;
-    private RequestAdapter adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,28 +113,6 @@ public class RidesActivity extends AppCompatActivity { //NOSONAR
 
         adapter.startListening();
     }
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.bottom_nav_menu, menu);
-
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
-                return false;
-            }
-        });
-        return true;
-    }*/
 
     @Override
     protected void onStop() {

@@ -34,7 +34,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.ExampleV
         }
     }
 
-    public RequestAdapter(ArrayList<ExampleItem> exampleList){
+    public RequestAdapter(List<ExampleItem> exampleList){
 
         mExampleList = exampleList;
         exampleListFull = new ArrayList<>(exampleList);
