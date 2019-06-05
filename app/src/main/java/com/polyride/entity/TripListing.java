@@ -2,12 +2,12 @@ package com.polyride.entity;
 
 public class TripListing {
 
-    public User driver;
-    public Integer maxPassengers;
-    public Integer numPassengers;
-    public String destination;
-    public String departure;
-    public String departureDate;
+    private User driver;
+    private Integer maxPassengers;
+    private Integer numPassengers;
+    private String destination;
+    private String departure;
+    private String departureDate;
 
     public TripListing() {}
 

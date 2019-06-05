@@ -2,10 +2,10 @@ package com.polyride.entity;
 
 public class Login {
 
-    public Integer profId;
-    public String username;
-    public String password;
-    public String email;
+    private Integer profId;
+    private String username;
+    private String password;
+    private String email;
 
     public Login() {}
 
