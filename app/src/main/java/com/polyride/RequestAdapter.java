@@ -14,7 +14,7 @@ import java.util.List;
 
 public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.ExampleViewHolder> implements Filterable {
 
-    private ArrayList<ExampleItem> mExampleList;
+    private List<ExampleItem> mExampleList;
     private List<ExampleItem> exampleListFull;
 
 
@@ -43,8 +43,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.ExampleV
     @Override
     public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.request_items, parent, false);
-        ExampleViewHolder evh = new ExampleViewHolder(v);
-        return evh;
+        return new ExampleViewHolder(v);
     }
 
     @Override
