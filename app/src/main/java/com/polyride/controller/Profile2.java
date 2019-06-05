@@ -1,6 +1,7 @@
 package com.polyride.controller;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TextInputLayout;
@@ -37,7 +38,7 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile2);
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -48,6 +49,12 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
 
                     case R.id.navigation_notifications:
                         openNotifications();
+                        break;
+
+                    case R.id.navigation_profile:
+                        openProfile();
+
+                    default:
                         break;
                 }
                 return true;
@@ -124,6 +131,11 @@ public class Profile2 extends AppCompatActivity { //NOSONAR
 
     public void openLogin(){
         Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+    }
+
+    public void openProfile(){
+        Intent intent = new Intent(this, Profile2.class);
         startActivity(intent);
     }
 
