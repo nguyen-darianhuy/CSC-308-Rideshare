@@ -33,6 +33,22 @@ public class TripListing {
                 '}';
     }
 
+    public String getRoute() {
+        String destination = getDestination();
+        String departure = getDeparture();
+        if (destination.equals("")) {
+            destination = "Undefined";
+        }
+        if (departure.equals("")) {
+            departure = "Undefined";
+        }
+        return departure + " -> " + destination;
+    }
+
+    public Integer getAvailableSeats() {
+        return getMaxPassengers() - getNumPassengers();
+    }
+
     public User getDriver() {
         return driver;
     }
