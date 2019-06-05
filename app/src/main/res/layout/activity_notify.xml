@@ -244,7 +244,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
-        android:text="Jared Lee Requests a Ride Request to Santa Barbara"
+        android:text="Jenna Hariman Requests a Ride Request to East San Jose"
         app:layout_constraintStart_toEndOf="@+id/person_action"
         app:layout_constraintTop_toTopOf="@+id/button10" />
 
