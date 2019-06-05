@@ -41,8 +41,12 @@ public class Notify extends AppCompatActivity {  //NOSONAR
                         openProfile();
                         break;
 
+                    case R.id.navigation_notifications:
+                        openNotifications();
+                        break;
 
-
+                    default:
+                        break;
                 }
                 return true;
             }
@@ -62,6 +66,11 @@ public class Notify extends AppCompatActivity {  //NOSONAR
 
     public void openProfile(){
         Intent intent = new Intent(this, Profile2.class);
+        startActivity(intent);
+    }
+
+    public void openNotifications(){
+        Intent intent = new Intent(this, Notify.class);
         startActivity(intent);
     }
 }
