@@ -12,7 +12,7 @@ public class UserNumberUnitTest {
         User user = new User();
         user.setNumber("123456789");
         String number = user.getNumber();
-        assertEquals(number,"123456789");
+        assertEquals("123456789", number);
     }
 
     @Test
@@ -20,6 +20,6 @@ public class UserNumberUnitTest {
         User user = new User();
         user.setNumber("987654321");
         String number = user.getNumber();
-        assertEquals(number, "987654321");
+        assertEquals("987654321", number);
     }
 }
