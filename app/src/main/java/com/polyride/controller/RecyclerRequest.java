@@ -29,17 +29,17 @@ import java.util.ArrayList;
 
 public class RecyclerRequest extends AppCompatActivity { //NOSONAR
 
-    FirebaseFirestore db;
-    FirebaseAuth auth;
-    FirebaseUser user;
+    private FirebaseFirestore db;
+    private FirebaseAuth auth;
+    private FirebaseUser user;
 
-    private final ArrayList<TripListing> idToTrips = new ArrayList<>();
     private TripListing trip;
     private User userClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Button button, button2;
+        Button button;
+        Button button2;
         RequestAdapter adapter;
         RecyclerView mRecyclerView;
         RecyclerView.LayoutManager mLayoutManager;
@@ -58,7 +58,7 @@ public class RecyclerRequest extends AppCompatActivity { //NOSONAR
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                AcceptRequest();
+                acceptRequest();
             }
         });
 
@@ -82,7 +82,7 @@ public class RecyclerRequest extends AppCompatActivity { //NOSONAR
         startActivity(intent);
     }
 
-    void AcceptRequest() {
+    void acceptRequest() {
         db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -102,8 +102,8 @@ public class RecyclerRequest extends AppCompatActivity { //NOSONAR
                 @Override
                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                     for (DocumentSnapshot doc : task.getResult()) {
-                        if (user.getUid().equals(doc.get("driverId", String.class))) {
-                            trip = new TripListing(doc, userClass);
+                        if (user.getUid().equals(doc.get("driverID", String.class))) {
+                            trip = new TripListing(doc, userClass, user.getUid());
                             trip.setNumPassengers(trip.getNumPassengers() + 1);
                             final DocumentReference dRef = db.collection("TripListing").document(doc.getId());
                             dRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

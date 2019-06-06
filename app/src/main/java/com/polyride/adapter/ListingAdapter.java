@@ -21,9 +21,11 @@ public class ListingAdapter extends FirestoreRecyclerAdapter<TripListing, Listin
     @Override
     protected void onBindViewHolder(@NonNull ListingHolder holder, int position, @NonNull TripListing model) {
         holder.textViewProfileName.setText(model.getDriver().getName());
-        holder.textViewDepartureDestination.setText(model.getDeparture() + " -> " + model.getDestination());
-        holder.textViewSpotsRemaining.setText("Spots Remaining: " + (model.getMaxPassengers()-model.getNumPassengers()));
-        holder.textViewDepartureDate.setText("Departure Date: " + model.getDepartureDate());
+        holder.textViewDepartureDestination.setText(model.getRoute());
+        String spotsRemaining = "Spots Remaining: " + model.getAvailableSeats();
+        holder.textViewSpotsRemaining.setText(spotsRemaining);
+        String departureDate = "Departure Date: " + model.getDepartureDate();
+        holder.textViewDepartureDate.setText(departureDate);
     }
 
     @NonNull
@@ -40,7 +42,7 @@ public class ListingAdapter extends FirestoreRecyclerAdapter<TripListing, Listin
         TextView textViewDepartureDate;
         TextView textViewRating;
 
-        public ListingHolder(View itemView) {
+        private ListingHolder(View itemView) {
             super(itemView);
             textViewProfileName =itemView.findViewById(R.id.textViewProfileName);
             textViewDepartureDestination = itemView.findViewById(R.id.textViewDepartureDestination);

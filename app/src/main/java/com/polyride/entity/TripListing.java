@@ -4,7 +4,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 
 public class TripListing {
 
-    private User driverID;
+
+    private User driver;
+    private String driverID;
     private Integer maxPassengers;
     private Integer numPassengers;
     private String destination;
@@ -13,24 +15,26 @@ public class TripListing {
 
     public TripListing() {}
 
-    public TripListing(DocumentSnapshot document, User user) {
-        setTripAttributes(document, user);
+    public TripListing(DocumentSnapshot document, User user, String UID) {
+        setTripAttributes(document, user, UID);
     }
 
     public TripListing(User driver, Integer maxPassengers, Integer numPassengers,
-                       String destination, String departure, String departureDate) {
-        this.driverID = driver;
+                       String destination, String departure, String departureDate,
+                       String driverID) {
+        this.driver = driver;
         this.maxPassengers = maxPassengers;
         this.numPassengers = numPassengers;
         this.destination = destination;
         this.departure = departure;
         this.departureDate = departureDate;
+        this.driverID = driverID;
     }
 
     @Override
     public String toString() {
         return "TripListing{" +
-                "driver=" + driverID +
+                "driver=" + driver +
                 ", maxPassengers=" + maxPassengers +
                 ", numPassengers=" + numPassengers +
                 ", destination='" + destination + '\'' +
@@ -39,21 +43,26 @@ public class TripListing {
                 '}';
     }
 
-    private void setTripAttributes(DocumentSnapshot document, User user) {
-        driverID = user;
+    private void setTripAttributes(DocumentSnapshot document, User user, String UID) {
+        driver = user;
         maxPassengers = document.get("maxPassengers", Integer.class);
         numPassengers = document.get("numPassengers", Integer.class);
         destination = document.getString("destination");
         departure = document.getString("departure");
         departureDate = document.getString("departureDate");
+        driverID = UID;
     }
 
-    public User getDriver() {
+    public String getDriverID() {
         return driverID;
     }
 
+    public User getDriver() {
+        return driver;
+    }
+
     public void setDriver(User driver) {
-        this.driverID = driver;
+        this.driver = driver;
     }
 
     public Integer getMaxPassengers() {
@@ -97,7 +106,8 @@ public class TripListing {
     }
 
     public String getRoute() {
-        String dep, dest;
+        String dep;
+        String dest;
 
         if (departure.equals("")) { dep = "Undefined"; }
         else { dep = departure; }

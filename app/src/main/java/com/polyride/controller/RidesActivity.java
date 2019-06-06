@@ -94,7 +94,8 @@ public class RidesActivity extends AppCompatActivity { //NOSONAR
                         snapshot.get("numPassengers", Integer.class),
                         snapshot.getString("destination"),
                         snapshot.getString("departure"),
-                        snapshot.getString("departureDate")
+                        snapshot.getString("departureDate"),
+                        snapshot.getString("driverID")
                 );
             }
         };
