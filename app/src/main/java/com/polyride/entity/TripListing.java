@@ -95,4 +95,20 @@ public class TripListing {
     public void setDepartureDate(String departureDate) {
         this.departureDate = departureDate;
     }
+
+    public String getRoute() {
+        String dep, dest;
+
+        if (departure.equals("")) { dep = "Undefined"; }
+        else { dep = departure; }
+
+        if (destination.equals("")) { dest = "Undefined"; }
+        else { dest = destination; }
+
+        return (dep + " -> " + dest);
+    }
+
+    public int getAvailableSeats() {
+        return maxPassengers - numPassengers;
+    }
 }
