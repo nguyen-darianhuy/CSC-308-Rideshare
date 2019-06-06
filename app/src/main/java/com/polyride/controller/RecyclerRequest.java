@@ -30,7 +30,6 @@ import java.util.ArrayList;
 public class RecyclerRequest extends AppCompatActivity { //NOSONAR
 
     private FirebaseFirestore db;
-    private FirebaseAuth auth;
     private FirebaseUser user;
 
     private TripListing trip;
@@ -84,7 +83,7 @@ public class RecyclerRequest extends AppCompatActivity { //NOSONAR
 
     void acceptRequest() {
         db = FirebaseFirestore.getInstance();
-        auth = FirebaseAuth.getInstance();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
         if (user != null) {

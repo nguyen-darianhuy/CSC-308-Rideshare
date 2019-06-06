@@ -15,8 +15,8 @@ public class TripListing {
 
     public TripListing() {}
 
-    public TripListing(DocumentSnapshot document, User user, String UID) {
-        setTripAttributes(document, user, UID);
+    public TripListing(DocumentSnapshot document, User user, String uID) {
+        setTripAttributes(document, user, uID);
     }
 
     public TripListing(User driver, Integer maxPassengers, Integer numPassengers,
@@ -43,14 +43,14 @@ public class TripListing {
                 '}';
     }
 
-    private void setTripAttributes(DocumentSnapshot document, User user, String UID) {
+    private void setTripAttributes(DocumentSnapshot document, User user, String uID) {
         driver = user;
         maxPassengers = document.get("maxPassengers", Integer.class);
         numPassengers = document.get("numPassengers", Integer.class);
         destination = document.getString("destination");
         departure = document.getString("departure");
         departureDate = document.getString("departureDate");
-        driverID = UID;
+        driverID = uID;
     }
 
     public String getDriverID() {
